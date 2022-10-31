@@ -1,5 +1,15 @@
 ```mermaid
 classDiagram
+	Kingdom <|-- Phylum
+	Phylum <|-- Class
+	Class <|-- Order
+	Order <|-- Family
+	Family <|-- Genus
+	Genus <|-- Species
+	Species <|-- Animal
+	Animal *-- Localization
+	Animal *-- Biologist
+
 	class Animal {
 		-String name
 		-String binomial_name

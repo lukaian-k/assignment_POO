@@ -37,7 +37,21 @@ classDiagram
 		+set_common_name(String common_name) bool
 		+set_distinctive_characteristics(String distinctive_characteristics) bool
 		}
-	
+
+	class Species {
+		-String species_name
+		-String abbreviations
+		-String species_category
+		
+		+Species(String species_name)
+		+get_species_name() String
+		+get_abbreviations() String
+		+get_species_category() String
+		+set_species_name(String species_name) bool
+		+set_abbreviations(String abbreviations) bool
+		+set_species_category(String species_category) bool
+		}
+		
 	class Animal {
 		-String name
 		-String binomial_name
@@ -95,7 +109,7 @@ classDiagram
 		+set_birth_data(Vector~int~ birth_data) bool
 		+set_nationality(String nationality) bool
 		+set_gender(String gender) bool
-	}
+		}
 ```
 
 

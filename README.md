@@ -37,7 +37,29 @@ classDiagram
 		+set_common_name(String common_name) bool
 		+set_distinctive_characteristics(String distinctive_characteristics) bool
 		}
+	
+	class Family {
+		-String family_name
+		-String description
+		
+		+Family(string family_name, string description)
+		+get_family_name() String
+		+get_description() String
+		+set_family_name(String family_name) bool
+		+set_description(String description) bool
+		}
+	
+	class Genus {
+		-String genus_name
+		-String genus_aspects
 
+		+Genus(String genus_name)
+		+get_genus_name() : String
+		+get_genus_aspects() : String
+		+set_genus_name(String genus_name) : bool
+		+set_genus_aspects(String genus_aspects) : bool
+		}
+		
 	class Species {
 		-String species_name
 		-String abbreviations

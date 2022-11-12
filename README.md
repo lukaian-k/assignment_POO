@@ -37,6 +37,28 @@ classDiagram
 		+set_common_name(String common_name) bool
 		+set_distinctive_characteristics(String distinctive_characteristics) bool
 		}
+		
+	class Class {
+		-String class_name
+		-String description
+
+		+Class(string class_name)
+		+get_class_name() : String
+		+get_description() : String
+		+set_class_name(String class_name) bool
+		+set_description(String description) bool
+		}
+		
+	class Order {
+		-String order_name
+		-String description
+
+		+Order(string order_name)
+		+get_order_name() : String
+		+get_description() : String
+		+set_order_name(String order_name) bool
+		+set_description(String description) bool
+		}
 	
 	class Family {
 		-String family_name

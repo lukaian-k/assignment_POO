@@ -1,8 +1,6 @@
-#include <iostream>
-using namespace std;
+#include "_config.h"
 
-
-int main(){
-    
-    return 0;
+int main() {
+  cout << "ola mundo" << endl;
+  return 0;
 }

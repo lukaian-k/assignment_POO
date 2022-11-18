@@ -1,6 +1,9 @@
-#include "_config.h"
+#include "./src/objects/animal.h"
 
 int main() {
-  cout << "ola mundo" << endl;
+  Animal a;
+  a.setT(2);
+
+  cout << a.getT() << endl;
   return 0;
 }

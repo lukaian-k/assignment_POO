@@ -1,4 +1,4 @@
-#include "genus.h"
+#include "../../../_config.h"
 
 class Kingdom {
 private:

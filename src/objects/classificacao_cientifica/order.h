@@ -1,4 +1,4 @@
-#include "kingdom.h"
+#include "class.h"
 
 class Order {
 private:

@@ -1,8 +1,8 @@
 ```mermaid
 classDiagram
 	Kingdom <|-- Phylum
-	Phylum <|-- Class
-	Class <|-- Order
+	Phylum <|-- Classe
+	Classe <|-- Order
 	Order <|-- Family
 	Family <|-- Genus
 	Genus <|-- Species

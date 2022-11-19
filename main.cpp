@@ -2,8 +2,6 @@
 
 int main() {
   Animal a;
-  a.setT(2);
-
-  cout << a.getT() << endl;
+  cout << a.get_family_name();
   return 0;
 }

@@ -1,6 +1,6 @@
 #include "class.h"
 
-class Order {
+class Order : public Classe {
 private:
 public:
 };

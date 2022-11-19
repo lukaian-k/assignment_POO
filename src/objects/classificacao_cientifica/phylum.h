@@ -1,6 +1,6 @@
 #include "kingdom.h"
 
-class Phylum {
+class Phylum : public Kingdom {
 private:
 public:
 };

@@ -1,9 +1,9 @@
 #include "family.h"
 
-class Genus {
+class Genus : public Family {
 private:
-  string genus_name;
-  string genus_aspects;
+  string name;
+  string aspects;
 
 public:
   Genus();

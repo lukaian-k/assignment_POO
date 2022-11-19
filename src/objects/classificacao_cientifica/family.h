@@ -1,6 +1,6 @@
 #include "order.h"
 
-class Family {
+class Family : public Order {
 private:
   string name;
   string description;

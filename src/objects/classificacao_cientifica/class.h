@@ -1,6 +1,6 @@
 #include "phylum.h"
 
-class Classe {
+class Classe : public Phylum {
 private:
 public:
 };

@@ -1,10 +1,6 @@
 #include "./classificacao_cientifica/species.h"
 
-class Animal {
+class Animal : public Species {
 private:
-  int t;
-
 public:
-  void setT(int t) { this->t = t; }
-  int getT() { return t; }
 };

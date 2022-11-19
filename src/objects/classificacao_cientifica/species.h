@@ -1,17 +1,17 @@
 #include "genus.h"
 
-class Species {
+class Species : public Genus {
 private:
-  string species_name;
+  string name;
   string abbreviations;
   string species_category;
 
 public:
   Species();
   string get_species_name();
-  string get_abbreviations();
+  string get_species_abbreviations();
   string get_species_category();
   bool set_species_name();
-  bool set_abbreviations();
+  bool set_species_abbreviations();
   bool set_species_category();
 };

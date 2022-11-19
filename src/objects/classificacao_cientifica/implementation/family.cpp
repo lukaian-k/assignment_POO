@@ -9,11 +9,9 @@ string Family::get_family_description() {
 }
 
 bool Family::set_family_name(string name) {
-  this->name = name;
-  return true;
+  return set_string(this->name, name);
 }
 
 bool Family::set_family_description(string description) {
-  this->description = description;
-  return true;
+  return set_string(this->description, description);
 }

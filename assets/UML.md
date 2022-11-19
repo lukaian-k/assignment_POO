@@ -18,8 +18,8 @@ classDiagram
 		+set_string(String &before, String after) bool
 		+get_kingdom_name()
 		+get_kingdom_description()
-		+set_kingdom_name() bool
-		+set_kingdom_description() bool
+		+set_kingdom_name(String name) bool
+		+set_kingdom_description(String description) bool
 		}
 	
 	class Phylum {

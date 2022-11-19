@@ -2,13 +2,13 @@
 
 class Family {
 private:
-  string family_name;
+  string name;
   string description;
 
 public:
   Family();
   string get_family_name();
-  string get_description();
-  bool set_family_name(string family_name);
-  bool set_description(string description);
+  string get_family_description();
+  bool set_family_name(string name);
+  bool set_family_description(string description);
 };

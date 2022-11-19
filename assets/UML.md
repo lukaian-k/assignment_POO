@@ -11,89 +11,89 @@ classDiagram
 	Animal *-- Biologist
 	
 	class Kingdom {
-		-String kingdom_name
+		-String name
 		-String description
 		
-		+Kingdom(String kingdom_name)
+		+Kingdom()
 		+get_kingdom_name()
-		+get_description()
+		+get_kingdom_description()
 		+set_kingdom_name() bool
-		+set_description() bool
+		+set_kingdom_description() bool
 		}
 	
 	class Phylum {
-		-String phylum_name
+		-String name
 		-String meaning
 		-String common_name
 		-String distinctive_characteristics
 		
-		+Phylum(String phylum_name)
+		+Phylum()
 		+get_phylum_name() String
-		+get_meaning() String
-		+get_common_name() String
-		+get_distinctive_characteristics() String
-		+set_phylum_name(String phylum_name) bool
-		+set_meaning(String meaning) bool
-		+set_common_name(String common_name) bool
-		+set_distinctive_characteristics(String distinctive_characteristics) bool
+		+get_phylum_meaning() String
+		+get_phylum_common_name() String
+		+get_phylum_distinctive_characteristics() String
+		+set_phylum_name(String name) bool
+		+set_phylum_meaning(String meaning) bool
+		+set_phylum_common_name(String common_name) bool
+		+set_phylum_distinctive_characteristics(String distinctive_characteristics) bool
 		}
 		
-	class Class {
-		-String class_name
+	class Classe {
+		-String name
 		-String description
 
-		+Class(string class_name)
+		+Class()
 		+get_class_name() : String
-		+get_description() : String
-		+set_class_name(String class_name) bool
-		+set_description(String description) bool
+		+get_class_description() : String
+		+set_class_name(String name) bool
+		+set_class_description(String description) bool
 		}
 		
 	class Order {
-		-String order_name
+		-String name
 		-String description
 
-		+Order(string order_name)
+		+Order()
 		+get_order_name() : String
-		+get_description() : String
-		+set_order_name(String order_name) bool
-		+set_description(String description) bool
+		+get_order_description() : String
+		+set_order_name(String name) bool
+		+set_order_description(String description) bool
 		}
 	
 	class Family {
-		-String family_name
+		-String name
 		-String description
 		
-		+Family(string family_name, string description)
+		+Family()
 		+get_family_name() String
-		+get_description() String
-		+set_family_name(String family_name) bool
-		+set_description(String description) bool
+		+get_family_description() String
+		+set_family_name(String name) bool
+		+set_family_description(String description) bool
 		}
 	
 	class Genus {
-		-String genus_name
-		-String genus_aspects
+		-String name
+		-String description
 
-		+Genus(String genus_name)
+		+Genus()
 		+get_genus_name() : String
-		+get_genus_aspects() : String
-		+set_genus_name(String genus_name) : bool
-		+set_genus_aspects(String genus_aspects) : bool
+		+get_genus_description() : String
+		+set_genus_name(String name) : bool
+		+set_genus_description(String aspects) : bool
 		}
 		
 	class Species {
-		-String species_name
+		-String name
 		-String abbreviations
-		-String species_category
+		-String category
 		
-		+Species(String species_name)
+		+Species()
 		+get_species_name() String
-		+get_abbreviations() String
+		+get_species_abbreviations() String
 		+get_species_category() String
-		+set_species_name(String species_name) bool
-		+set_abbreviations(String abbreviations) bool
-		+set_species_category(String species_category) bool
+		+set_species_name(String name) bool
+		+set_species_abbreviations(String abbreviations) bool
+		+set_species_category(String category) bool
 		}
 		
 	class Animal {

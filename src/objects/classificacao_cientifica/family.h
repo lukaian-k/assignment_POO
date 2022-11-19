@@ -6,7 +6,7 @@ private:
   string description;
 
 public:
-  Family();
+  // Family();
   string get_family_name();
   string get_family_description();
   bool set_family_name(string name);

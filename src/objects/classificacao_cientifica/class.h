@@ -10,5 +10,5 @@ public:
   string get_class_name();
   string get_class_decription();
   bool set_class_name(string class_name);
-  bool set_description(string class_description);
+  bool set_class_description(string class_description);
 };

@@ -9,12 +9,16 @@ string Kingdom::get_kingdom_description() {
 }
 
 bool Kingdom::set_string(string &before, string after) {
-  if (after != "" && typeid(before) == typeid(string) &&
-      typeid(after) == typeid(string)) {
-    before = after;
-    return true;
+  try {
+    if (after != "" && typeid(before) == typeid(string) &&
+        typeid(after) == typeid(string)) {
+      before = after;
+      return true;
+    }
+    throw false;
+  } catch (bool answer) {
+    return answer;
   }
-  return false;
 }
 
 bool Kingdom::set_kingdom_name(string name) {

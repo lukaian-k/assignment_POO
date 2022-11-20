@@ -6,7 +6,7 @@ private:
   string order_description;
 
 public:
-  Order(string order_name, string order_description) : Classe (string class_name, string class_description);
+  //Order(string order_name, string order_description) : Classe (string class_name, string class_description);
   string get_order_name();
   string get_order_decription();
   bool set_order_name(string order_name);

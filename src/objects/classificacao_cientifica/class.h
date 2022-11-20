@@ -3,12 +3,12 @@
 class Classe : public Phylum {
 private:
   string class_name;
-  string description;
+  string class_description;
   
 public:
-  Classe(string class_name) : Phylum (string name, string distinctive_characteristics);
+  Classe(string class_name, string class_description) : Phylum (string name, string distinctive_characteristics);
   string get_class_name();
-  string get_decription();
+  string get_class_decription();
   bool set_class_name(string class_name);
-  bool set_description(string description);
+  bool set_description(string class_description);
 };

@@ -7,7 +7,7 @@ private:
   string description;
 
 public:
-  //   Kingdom();
+  // Kingdom();
   string get_kingdom_name();
   string get_kingdom_description();
   bool set_string(string &before, string after);

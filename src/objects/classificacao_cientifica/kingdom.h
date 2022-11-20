@@ -8,10 +8,9 @@ private:
 
 public:
   //   Kingdom();
-  bool set_string(string &before, string after);
-
   string get_kingdom_name();
   string get_kingdom_description();
-  bool set_kingdom_name();
-  bool set_kingdom_description();
+  bool set_string(string &before, string after);
+  bool set_kingdom_name(string name);
+  bool set_kingdom_description(string description);
 };

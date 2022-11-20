@@ -16,26 +16,20 @@ classDiagram
 		
 		+Kingdom()
 		+set_string(String &before, String after) bool
-		+get_kingdom_name()
-		+get_kingdom_description()
-		+set_kingdom_name() bool
-		+set_kingdom_description() bool
+		+get_kingdom_name() String
+		+get_kingdom_description() String
+		+set_kingdom_name(String name) bool
+		+set_kingdom_description(String description) bool
 		}
 	
 	class Phylum {
 		-String name
-		-String meaning
-		-String common_name
 		-String distinctive_characteristics
 		
 		+Phylum()
 		+get_phylum_name() String
-		+get_phylum_meaning() String
-		+get_phylum_common_name() String
 		+get_phylum_distinctive_characteristics() String
 		+set_phylum_name(String name) bool
-		+set_phylum_meaning(String meaning) bool
-		+set_phylum_common_name(String common_name) bool
 		+set_phylum_distinctive_characteristics(String distinctive_characteristics) bool
 		}
 		

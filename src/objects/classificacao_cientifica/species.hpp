@@ -1,4 +1,4 @@
-#include "genus.h"
+#include "genus.hpp"
 
 class Species : public Genus {
 private:

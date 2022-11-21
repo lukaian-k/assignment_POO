@@ -1,4 +1,4 @@
-#include "../class.h"
+#include "../class.hpp"
 
 string Classe::get_class_name() {
   return class_name == "" ? "Informe esta informação primeiro." : class_name;

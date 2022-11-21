@@ -1,4 +1,4 @@
-#include "./src/objects/animal/animal.h"
+#include "./src/objects/animal/animal.hpp"
 
 int main() {
   Animal a;

@@ -1,4 +1,4 @@
-#include "../kingdom.h"
+#include "../kingdom.hpp"
 
 bool Kingdom::set_string(string &before, string after) {
   try {

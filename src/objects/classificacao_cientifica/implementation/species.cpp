@@ -1,4 +1,4 @@
-#include "../species.h"
+#include "../species.hpp"
 
 string Species::get_species_name() {
   return name == "" ? "Informe esta informação primeiro." : name;

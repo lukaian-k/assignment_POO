@@ -1,4 +1,4 @@
-#include "../biologist.h"
+#include "../biologist.hpp"
 
 std::string Biologist::get_biologist_name() {
   return name == "" ? "Informe esta informação primeiro." : name;

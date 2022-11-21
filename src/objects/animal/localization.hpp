@@ -1,4 +1,4 @@
-#include "../auxiliary_objects/general_functions.h"
+#include "../auxiliary_objects/general_functions.hpp"
 #include <string>
 
 class Localization : public General_functions {

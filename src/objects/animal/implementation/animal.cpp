@@ -1,4 +1,4 @@
-#include "../animal.h"
+#include "../animal.hpp"
 
 string Animal::get_animal_name() {
   return name == "" ? "Informe esta informação primeiro." : name;

@@ -1,4 +1,4 @@
-#include "../../../_config.h"
+#include "../../../_config.hpp"
 #include <string>
 
 class Kingdom {

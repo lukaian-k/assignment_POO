@@ -1,4 +1,4 @@
-#include "../phylum.h"
+#include "../phylum.hpp"
 
 string Phylum::get_phylum_name() {
   return name == "" ? "Informe esta informação primeiro." : name;

@@ -1,6 +1,6 @@
-#include "../classificacao_cientifica/species.h"
-#include "./localization.h"
-#include "./biologist.h"
+#include "../classificacao_cientifica/species.hpp"
+#include "./localization.hpp"
+#include "./biologist.hpp"
 
 class Animal : public Species {
 private:

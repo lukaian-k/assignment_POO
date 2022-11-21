@@ -1,4 +1,4 @@
-#include "../localization.h"
+#include "../localization.hpp"
 
 std::string Localization::get_localization_geographical_distribution() {
   return geographical_distribution == "" ? "Informe esta informação primeiro."

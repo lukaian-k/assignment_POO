@@ -1,4 +1,4 @@
-#include "class.h"
+#include "class.hpp"
 
 class Order : public Classe {
 private:

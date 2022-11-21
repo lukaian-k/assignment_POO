@@ -1,4 +1,4 @@
-#include "../genus.h"
+#include "../genus.hpp"
 
 string Genus::get_genus_name() {
   return name == "" ? "Informe esta informação primeiro." : name;

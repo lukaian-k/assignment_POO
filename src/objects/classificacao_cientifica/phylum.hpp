@@ -1,4 +1,4 @@
-#include "kingdom.h"
+#include "kingdom.hpp"
 
 class Phylum : public Kingdom {
 private:

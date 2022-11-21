@@ -1,4 +1,4 @@
-#include "general_functions.h"
+#include "general_functions.hpp"
 #include <ios>
 
 bool General_functions::set_string(std::string &before, std::string after) {

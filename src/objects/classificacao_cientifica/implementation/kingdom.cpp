@@ -1,13 +1,5 @@
 #include "../kingdom.h"
 
-string Kingdom::get_kingdom_name() {
-  return name == "" ? "Informe esta informação primeiro." : name;
-}
-
-string Kingdom::get_kingdom_description() {
-  return description == "" ? "Informe esta informação primeiro." : description;
-}
-
 bool Kingdom::set_string(string &before, string after) {
   try {
     if (after != "" && typeid(before) == typeid(string) &&
@@ -19,6 +11,14 @@ bool Kingdom::set_string(string &before, string after) {
   } catch (bool answer) {
     return answer;
   }
+}
+
+string Kingdom::get_kingdom_name() {
+  return name == "" ? "Informe esta informação primeiro." : name;
+}
+
+string Kingdom::get_kingdom_description() {
+  return description == "" ? "Informe esta informação primeiro." : description;
 }
 
 bool Kingdom::set_kingdom_name(string name) {

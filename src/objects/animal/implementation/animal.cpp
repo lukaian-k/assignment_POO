@@ -5,17 +5,18 @@ string Animal::get_animal_name() {
 }
 
 string Animal::get_animal_binominalName() {
-  return binominalName == "" ? "Informe esta informação primeiro." : binominalName;
+  return binominalName == "" ? "Informe esta informação primeiro."
+                             : binominalName;
 }
 
-string Animal::get_animal_descriptiveCharacteristics() {
-  return descriptiveCharacteristics == "" ? "Informe esta informação primeiro." : descriptiveCharacteristics;
+string Animal::get_animal_descriptive_characteristics() {
+  return descriptive_characteristics == "" ? "Informe esta informação primeiro."
+                                           : descriptive_characteristics;
 }
 
 string Animal::get_animal_extinction() {
   return extinction == "" ? "Informe esta informação primeiro." : extinction;
 }
-
 
 bool Animal::set_animal_name(string name) {
   return set_string(this->name, name);
@@ -25,8 +26,10 @@ bool Animal::set_animal_binominalName(string binominalName) {
   return set_string(this->binominalName, binominalName);
 }
 
-bool Animal::set_animal_descriptiveCharacteristics(string descriptiveCharacteristics) {
-  return set_string(this->descriptiveCharacteristics, descriptiveCharacteristics);
+bool Animal::set_animal_descriptive_characteristics(
+    string descriptive_characteristics) {
+  return set_string(this->descriptive_characteristics,
+                    descriptive_characteristics);
 }
 
 bool Animal::set_animal_extinction(string extinction) {

@@ -1,4 +1,4 @@
-#include "general_functions.hpp"
+#include "../general_functions.hpp"
 
 bool General_functions::set_string(string &before, string after) {
   try {

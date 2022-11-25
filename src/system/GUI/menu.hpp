@@ -3,7 +3,7 @@
 class Menu {
 private:
   int select;
-  enum { REGISTER = 1, SEARCH, DELETE, PRINT, EXIT = 0 };
+  enum { REGISTER = 1, SEARCH, UPDATE, DELETE, PRINT, EXIT = 0 };
   bool is_valid = true;
 
 public:

@@ -4,35 +4,41 @@ void Menu::text_menu() {
   system(CLEAR);
 
   if (is_valid == false) {
-    cout << BOLD FONT_RED "\n\nSelecione uma opção valida!" RESET << endl;
+    cout << BOLD FONT_RED "Selecione uma opção valida! \n" << endl;
     is_valid = true;
   }
 
   cout << RESET BOLD BACKGROUND_BLUE
-      "\n<<< SISTEMA >>>\n-------------------------------------"
-       << endl;
-  cout << RESET BACKGROUND_WHITE FONT_BLUE
-      " 1 - REGISTER.\n"
-      " 2 - SEARCH.\n"
-      " 3 - DELETE.\n"
-      " 4 - PRINT.\n"
-      " 0 - Sair do sistema!\n" RESET FONT_BLUE
+      "    <<< SISTEMA >>>    \n" RESET BACKGROUND_WHITE FONT_BLUE
+      " 1 - Registrar animal. \n"
+      " 2 - Buscar animal.    \n"
+      " 3 - Atualizar animal. \n"
+      " 4 - Remover animal.   \n"
+      " 5 - Imprimir arquivo. \n"
+      " 0 - Sair do sistema!  " RESET FONT_BLUE
        << endl;
 }
 
 void Menu::menu_select() {
-  cout << "Digite a funcionalidade desejada: " << endl;
+  cout << "\nDigite a funcionalidade desejada: ";
   cin >> select;
 
   switch (select) {
 
   case REGISTER:
+    break;
 
   case SEARCH:
+    break;
+
+  case UPDATE:
+    break;
 
   case DELETE:
+    break;
 
   case PRINT:
+    break;
 
   case EXIT:
     system(CLEAR);

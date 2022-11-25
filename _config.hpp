@@ -5,18 +5,16 @@
 #ifndef CONFIG
 #define CONFIG
 
-
 #include "./src/system/GUI/colors.hpp"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-// #ifdef __unix__
-//     #define CLEAR = "clear"
-// #elif defined(_WIN32) || defined(WIN32)
-//     #define CLEAR = "cls"
-// #endif
-
+#ifdef __unix__
+#define CLEAR "clear"
+#elif defined(_WIN32) || defined(WIN32)
+#define CLEAR "cls"
+#endif
 
 #endif

@@ -1,7 +1,13 @@
 #include "../menu.hpp"
 
 void Menu::text_menu() {
-  system("clear");
+  system(CLEAR);
+
+  if (is_valid == false) {
+    cout << BOLD FONT_RED "\n\nSelecione uma opção valida!" RESET << endl;
+    is_valid = true;
+  }
+
   cout << RESET BOLD BACKGROUND_BLUE
       "\n<<< SISTEMA >>>\n-------------------------------------"
        << endl;
@@ -14,32 +20,27 @@ void Menu::text_menu() {
        << endl;
 }
 
-bool Menu::menu_select() {
+void Menu::menu_select() {
   cout << "Digite a funcionalidade desejada: " << endl;
   cin >> select;
 
   switch (select) {
 
   case REGISTER:
-    return false;
 
   case SEARCH:
-    return false;
 
   case DELETE:
-    return false;
 
   case PRINT:
-    return false;
 
   case EXIT:
-    system("clear");
+    system(CLEAR);
     cout << BOLD BACKGROUND_WHITE FONT_GREEN " Programa finalizado! \n" RESET
          << endl;
     exit(1);
 
   default:
-    cout << BOLD FONT_RED "\n\nSelecione uma opção valida!" RESET << endl;
-    return false;
+    is_valid = false;
   }
 }

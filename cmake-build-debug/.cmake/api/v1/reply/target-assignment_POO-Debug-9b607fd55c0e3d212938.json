@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 12,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
@@ -57,6 +57,12 @@
 				"file" : 0,
 				"line" : 10,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
 			}
 		]
 	},
@@ -80,19 +86,23 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/animal"
+					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/exceptions"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects"
+					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/animal"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica"
+					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/system"
+					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/lukaian/CLionProjects/assignment_POO/src/system/GUI"
 				}
 			],
 			"language" : "CXX",
@@ -106,18 +116,19 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
 				1,
 				2,
-				6,
-				8,
+				3,
+				7,
 				9,
 				10,
 				11,
 				12,
 				13,
 				14,
-				23
+				15,
+				23,
+				27
 			]
 		}
 	],
@@ -147,39 +158,43 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Source Files",
-			"sourceIndexes" : 
-			[
-				0,
-				1,
-				2,
-				6,
-				8,
-				9,
-				10,
-				11,
-				12,
-				13,
-				14,
-				23
-			]
-		},
-		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				3,
+				0,
 				4,
 				5,
-				7,
-				15,
+				6,
+				8,
 				16,
 				17,
 				18,
 				19,
 				20,
 				21,
-				22
+				22,
+				24,
+				25,
+				26
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				7,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				23,
+				27
 			]
 		}
 	],
@@ -187,135 +202,156 @@
 	[
 		{
 			"backtrace" : 1,
+			"path" : "src/exceptions/temp.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/animal/implementation/animal.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/animal/implementation/biologist.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/animal/implementation/localization.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/animal/animal.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/animal/biologist.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/animal/localization.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/auxiliary_objects/general_functions.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/auxiliary_objects/general_functions.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/class.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/family.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/genus.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/kingdom.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/order.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/phylum.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/objects/classificacao_cientifica/implementation/species.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/class.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/family.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/genus.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/kingdom.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/order.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/phylum.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"path" : "src/objects/classificacao_cientifica/species.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/system/GUI/implementation/menu.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
+			"path" : "src/system/GUI/colors.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/system/GUI/menu.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
 			"path" : "_config.hpp",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
-			"sourceGroupIndex" : 0
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

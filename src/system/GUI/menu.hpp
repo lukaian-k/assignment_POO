@@ -3,9 +3,10 @@
 class Menu {
 private:
   int select;
-  enum { REGISTER = 1, SEARCH, DELETE, PRINT, EXIT };
+  enum { REGISTER = 1, SEARCH, DELETE, PRINT, EXIT = 0 };
+  bool is_valid = true;
 
 public:
   void text_menu();
-  bool menu_select();
+  void menu_select();
 };

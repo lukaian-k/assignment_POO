@@ -15,7 +15,7 @@ add_executable(assignment_POO
         src/objects/animal/animal.hpp
         src/objects/animal/biologist.hpp
         src/objects/animal/localization.hpp
-        "src/objects/auxiliary_objects/general_functions copy.cpp"
+        "src/objects/auxiliary_objects/general_functions.cpp"
         src/objects/auxiliary_objects/general_functions.hpp
         src/objects/classificacao_cientifica/implementation/class.cpp
         src/objects/classificacao_cientifica/implementation/family.cpp

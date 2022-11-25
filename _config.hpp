@@ -6,6 +6,7 @@
 #define CONFIG
 
 #include "./src/system/GUI/colors.hpp"
+#include <fstream>
 #include <iostream>
 #include <string>
 

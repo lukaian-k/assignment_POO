@@ -1,10 +1,8 @@
 #include "../../../_config.hpp"
+#include "../auxiliary_objects/general_functions.hpp"
 #include <string>
 
-class Kingdom {
-protected:
-  bool set_string(string &before, string after);
-
+class Kingdom : public General_functions {
 private:
   string name;
   string description;

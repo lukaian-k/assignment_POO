@@ -7,6 +7,7 @@ include_directories(.)
 include_directories(src/objects/animal)
 include_directories(src/objects/auxiliary_objects)
 include_directories(src/objects/classificacao_cientifica)
+include_directories(src/system)
 
 add_executable(assignment_POO
         src/objects/animal/implementation/animal.cpp

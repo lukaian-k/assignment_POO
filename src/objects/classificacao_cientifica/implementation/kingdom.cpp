@@ -1,18 +1,5 @@
 #include "../kingdom.hpp"
 
-bool Kingdom::set_string(string &before, string after) {
-  try {
-    if (after != "" && typeid(before) == typeid(string) &&
-        typeid(after) == typeid(string)) {
-      before = after;
-      return true;
-    }
-    throw false;
-  } catch (bool answer) {
-    return answer;
-  }
-}
-
 string Kingdom::get_kingdom_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
 }

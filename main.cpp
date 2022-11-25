@@ -1,9 +1,11 @@
 #include "./src/objects/animal/animal.hpp"
+#include "./src/system/GUI/menu.hpp"
 
 int main() {
-  Animal a;
-  cout << a.get_animal_name() << endl;
-  a.set_kingdom_name("animal");
-  cout << a.get_kingdom_name() << endl;
+
+  Menu menu;
+  menu.text_menu();
+  menu.menu_select();
+  
   return 0;
 }

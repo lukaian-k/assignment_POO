@@ -15,7 +15,6 @@ classDiagram
 		-String description
 		
 		+Kingdom()
-		+set_string(String &before, String after) bool
 		+get_kingdom_name() String
 		+get_kingdom_description() String
 		+set_kingdom_name(String name) bool

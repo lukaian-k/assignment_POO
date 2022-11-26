@@ -1,6 +1,9 @@
+#ifndef ANIMAL
+#define ANIMAL
+
 #include "../classificacao_cientifica/species.hpp"
-#include "./localization.hpp"
 #include "./biologist.hpp"
+#include "./localization.hpp"
 
 class Animal : public Species {
 private:
@@ -9,6 +12,7 @@ private:
   string descriptive_characteristics;
   float life_span;
   string extinction;
+  bool is_active = true;
 
 public:
   // Animal();
@@ -16,9 +20,14 @@ public:
   string get_animal_binominalName();
   string get_animal_descriptive_characteristics();
   string get_animal_extinction();
+  bool get_active();
 
   bool set_animal_name(string name);
   bool set_animal_binominalName(string binominalName);
-  bool set_animal_descriptive_characteristics(string descriptive_characteristics);
+  bool
+  set_animal_descriptive_characteristics(string descriptive_characteristics);
   bool set_animal_extinction(string extinction);
+  void set_active();
 };
+
+#endif

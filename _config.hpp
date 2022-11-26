@@ -6,6 +6,7 @@
 #define CONFIG
 
 #include "./src/system/GUI/colors.hpp"
+#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -17,5 +18,7 @@ using namespace std;
 #elif defined(_WIN32) || defined(WIN32)
 #define CLEAR "cls"
 #endif
+
+// fflush(stdin); getline(cin, varString);
 
 #endif

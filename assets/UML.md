@@ -99,6 +99,7 @@ classDiagram
 		-String extinction
 		-Localization localization
 		-Biologist biologist
+		-bool is_active
 		
 		+Animal(String name)
 		+get_name() String
@@ -107,12 +108,14 @@ classDiagram
 		+get_descriptive_characteristics() String
 		+get_life_span() float
 		+get_conservation_state() String
+		+get_is_active() bool
 		+set_name(String name) bool
 		+set_binomial_name(String binomial_name) bool
 		+set_height_and_weight(Vector~float~ height_and_weight) bool
 		+set_descriptive_characteristics(String descriptive_characteristics) bool
 		+set_life_span(int life_span) bool
 		+set_conservation_state(String acronym) bool
+		+set_is_active() void
 		}
 		
 	class Localization {

@@ -1,8 +1,7 @@
-#include "./src/objects/animal/animal.hpp"
 #include "./src/system/GUI/menu.hpp"
 
 int main() {
-  ofstream fp("./database/animais.dat", ios::app);
+  ofstream fp("database.dat", ios::app);
   fp.close();
 
   Menu menu;

@@ -1,4 +1,6 @@
 #include "../menu.hpp"
+#include "../../../objects/animal/animal.hpp"
+#include "../../CRUD/crud.hpp"
 
 void Menu::text_menu() {
   system(CLEAR);
@@ -20,31 +22,46 @@ void Menu::text_menu() {
 }
 
 void Menu::menu_select() {
+  CRUD crud;
+
   cout << "\nDigite a funcionalidade desejada: ";
+  fflush(stdin);
   cin >> select;
 
   switch (select) {
 
-  case REGISTER:
+  case REGISTER: {
+    Animal animal;
+    crud.add(animal);
     break;
+  }
 
-  case SEARCH:
+  case SEARCH: {
+    crud.search();
     break;
+  }
 
-  case UPDATE:
+  case UPDATE: {
+    crud.update();
     break;
+  }
 
-  case DELETE:
+  case DELETE: {
+    crud.remove();
     break;
+  }
 
-  case PRINT:
+  case PRINT: {
+    crud.size();
     break;
+  }
 
-  case EXIT:
+  case EXIT: {
     system(CLEAR);
     cout << BOLD BACKGROUND_WHITE FONT_GREEN " Programa finalizado! \n" RESET
          << endl;
     exit(1);
+  }
 
   default:
     is_valid = false;

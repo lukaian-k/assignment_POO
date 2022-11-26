@@ -1,4 +1,5 @@
 #include "../animal.hpp"
+#include <fstream>
 
 string Animal::get_animal_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
@@ -38,4 +39,16 @@ bool Animal::set_animal_extinction(string extinction) {
   return set_string(this->extinction, extinction);
 }
 
-void Animal::set_active() { is_active == true ? is_active = false : is_active = true; }
+void Animal::set_active() {
+  is_active == true ? is_active = false : is_active = true;
+}
+
+ostream &operator<<(ostream &os, const Animal &animal) {
+  os << "\n" << animal.name << "\n";
+  return os;
+}
+
+istream &operator>>(istream &is, Animal &animal) {
+  is >> animal.name;
+  return is;
+}

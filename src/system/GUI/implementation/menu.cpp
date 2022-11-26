@@ -31,28 +31,32 @@ void Menu::menu_select() {
   switch (select) {
 
   case REGISTER: {
+    ofstream fp("database.txt", fstream::app);
     Animal animal;
-    crud.add(animal);
+    crud.add(fp, animal);
+    fp.close();
     break;
   }
 
   case SEARCH: {
-    crud.search();
+    ifstream fp("database.txt");
+    Animal animal;
+    crud.search(fp, animal);
+    fp.close();
     break;
   }
 
   case UPDATE: {
-    crud.update();
+    // crud.update();
     break;
   }
 
   case DELETE: {
-    crud.remove();
+    // crud.remove();
     break;
   }
 
   case PRINT: {
-    crud.size();
     break;
   }
 

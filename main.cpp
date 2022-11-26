@@ -1,9 +1,8 @@
 #include "./src/system/GUI/menu.hpp"
 
 int main() {
-  ofstream fp("database.dat", ios::app);
+  ofstream fp("database.txt", ios::app);
   fp.close();
-
   Menu menu;
 
   while (true) {

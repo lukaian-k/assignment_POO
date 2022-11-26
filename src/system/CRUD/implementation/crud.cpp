@@ -1,33 +1,32 @@
 #include "../crud.hpp"
-#include <iostream>
 
-void CRUD::add(Animal &animal) {
-  ofstream fp("database.dat", ios::app);
-  if (fp.is_open()) {
-    fp.write(reinterpret_cast<const char *>(&animal), sizeof(Animal));
-  } else {
-    cout << RESET FONT_RED " Erro ao abrir o arquivo: database.dat ";
-  }
-  fp.close();
+void CRUD::add(ostream &fp, Animal &animal) {
+  cout << "nome: ";
+  string name;
+  getline(std::cin >> std::ws, name);
+  animal.set_animal_name(name);
+
+  fp << animal; // by inserting in the file
 }
 
-void CRUD::search() {}
+void CRUD::search(istream &fp, Animal &animal) {
+  cout << "all people" << endl;
 
-void CRUD::update() {}
+  if (fp.good()) {
+    while (!fp.eof()) {
+      // if (fp.eof())
+      //   return;
+      fp >> animal; // extracts from the file
 
-void CRUD::remove() {}
-
-void CRUD::size() {
-  ifstream fp("database.dat");
-  if (fp.is_open()) {
-    Animal animal;
-    int i = 0;
-    while (fp.read((char *)&animal, sizeof(Animal))) {
-      if (animal.get_active() == true)
-        i++;
+      cout << "nome: " << animal.get_animal_name() << "\n";
     }
-    cout << RESET BACKGROUND_WHITE FONT_GREEN "Animais cadastrados: " << i
-         << endl;
+  } else {
+    cout << "Falha ao abrir o arquivo!\n\n";
   }
-  fp.close();
 }
+
+void CRUD::update(ostream &fp, Animal &animal) {}
+
+void CRUD::remove(ostream &fp, Animal &animal) {}
+
+void CRUD::size() {}

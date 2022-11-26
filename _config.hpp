@@ -19,6 +19,4 @@ using namespace std;
 #define CLEAR "cls"
 #endif
 
-// fflush(stdin); getline(cin, varString);
-
 #endif

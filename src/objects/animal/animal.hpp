@@ -28,6 +28,9 @@ public:
   set_animal_descriptive_characteristics(string descriptive_characteristics);
   bool set_animal_extinction(string extinction);
   void set_active();
+
+  friend ostream &operator<<(ostream &os, const Animal &animal);
+  friend istream &operator>>(istream &is, Animal &animal);
 };
 
 #endif

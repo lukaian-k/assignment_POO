@@ -45,10 +45,11 @@ void Animal::set_active() {
 
 ostream &operator<<(ostream &os, const Animal &animal) {
   os << "\n" << animal.name << "\n";
+  os << animal.binominalName;
   return os;
 }
 
 istream &operator>>(istream &is, Animal &animal) {
-  is >> animal.name;
+  is >> animal.name >> animal.binominalName;
   return is;
 }

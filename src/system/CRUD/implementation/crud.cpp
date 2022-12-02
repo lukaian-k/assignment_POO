@@ -1,27 +1,48 @@
 #include "../crud.hpp"
 
-void CRUD::add(ostream &fp, Animal &animal) {
-  cout << "nome: ";
-  string name;
-  getline(std::cin >> std::ws, name);
-  animal.set_animal_name(name);
+string replace(string word, char before, char after) {
+  for (int i = 0; i <= word.length(); i++) {
+    if (word[i] == before) {
+      word[i] = after;
+    }
+  }
+  return word;
+}
 
-  fp << animal; // by inserting in the file
+void CRUD::add(ostream &fp, Animal &animal) {
+  if (fp.good()) {
+    cout << "nome: ";
+    string name;
+    fflush(stdin);
+    getline(std::cin >> std::ws, name);
+    animal.set_animal_name(replace(name, ' ', '-'));
+    animal.set_animal_binominalName(
+        replace(animal.get_animal_binominalName(), ' ', '-'));
+
+    fp << animal; // by inserting in the file
+  } else {
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt"
+         << endl;
+  }
 }
 
 void CRUD::search(istream &fp, Animal &animal) {
+
   cout << "all people" << endl;
 
   if (fp.good()) {
     while (!fp.eof()) {
-      // if (fp.eof())
-      //   return;
       fp >> animal; // extracts from the file
 
-      cout << "nome: " << animal.get_animal_name() << "\n";
+      cout << "nome: " << replace(animal.get_animal_name(), '-', ' ') << "\n";
+      cout << "binominal: "
+           << replace(animal.get_animal_binominalName(), '-', ' ') << "\n\n";
     }
   } else {
-    cout << "Falha ao abrir o arquivo!\n\n";
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt"
+         << endl;
   }
 }
 

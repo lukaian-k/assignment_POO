@@ -1,5 +1,4 @@
 #include "../animal.hpp"
-#include <fstream>
 
 string Animal::get_animal_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
@@ -43,13 +42,24 @@ void Animal::set_active() {
   is_active == true ? is_active = false : is_active = true;
 }
 
+void Animal::all_search() {
+  cout << RESET BACKGROUND_WHITE FONT_GREEN "Nome do Animal: " FONT_BLACK
+       << name << FONT_GREEN "\nNome Cientifico: " FONT_BLACK << binominalName
+       << FONT_GREEN "\nCaracteristicas: " FONT_BLACK
+       << descriptive_characteristics << FONT_GREEN "\nEm Extinção? " FONT_BLACK
+       << extinction << "\n\n";
+}
+
 ostream &operator<<(ostream &os, const Animal &animal) {
   os << "\n" << animal.name << "\n";
-  os << animal.binominalName;
+  os << animal.binominalName << "\n";
+  os << animal.descriptive_characteristics << "\n";
+  os << animal.extinction << "\n";
   return os;
 }
 
 istream &operator>>(istream &is, Animal &animal) {
-  is >> animal.name >> animal.binominalName;
+  is >> animal.name >> animal.binominalName >>
+      animal.descriptive_characteristics >> animal.extinction;
   return is;
 }

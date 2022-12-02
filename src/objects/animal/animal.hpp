@@ -29,6 +29,10 @@ public:
   bool set_animal_extinction(string extinction);
   void set_active();
 
+  void all_search();
+  void minimum_search();
+  void specify_search();
+
   friend ostream &operator<<(ostream &os, const Animal &animal);
   friend istream &operator>>(istream &is, Animal &animal);
 };

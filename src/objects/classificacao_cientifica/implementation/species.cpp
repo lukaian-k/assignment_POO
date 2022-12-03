@@ -37,7 +37,7 @@ void Species::species_all_search() {
 }
 
 ostream &operator<<(ostream &os, const Species &species) {
-  os << species.name << "\n";
+  os << "\n" << species.name << "\n";
   os << species.abbreviations << "\n";
   os << species.species_category << "\n";
   return os;

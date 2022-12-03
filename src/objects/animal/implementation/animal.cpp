@@ -60,12 +60,16 @@ ostream &operator<<(ostream &os, const Animal &animal) {
   os << "\n" << animal.name << "\n";
   os << animal.binominal_name << "\n";
   os << animal.descriptive_characteristics << "\n";
-  os << animal.extinction << "\n";
+  os << animal.extinction;
+
+  os << static_cast<const Species &>(animal);
   return os;
 }
 
 istream &operator>>(istream &is, Animal &animal) {
   is >> animal.name >> animal.binominal_name >>
       animal.descriptive_characteristics >> animal.extinction;
+
+  is >> static_cast<Species &>(animal);
   return is;
 }

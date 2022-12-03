@@ -41,10 +41,13 @@ void CRUD::add(ostream &fp, Animal &animal) {
     animal.set_animal_extinction(
         replace(animal.get_animal_extinction(), ' ', '-'));
 
+    animal.set_species_name(
+        replace("arroz", ' ', '-'));
+
     fp << animal; // by inserting in the file
   } else {
     cout << RESET BACKGROUND_RED FONT_WHITE
-        "Erro ao abrir o arquivo: database.txt"
+        "Erro ao abrir o arquivo: database.txt" RESET
          << endl;
   }
 }
@@ -87,11 +90,11 @@ void CRUD::search(istream &fp, Animal &animal) {
         }
         char back;
         cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
-                      " Pressione qualquer tecla para continuar... ";
+                      " Pressione qualquer tecla para continuar... " RESET;
         cin >> back;
       } else {
         cout << RESET BACKGROUND_RED FONT_WHITE
-            "Erro ao abrir o arquivo: database.txt"
+            "Erro ao abrir o arquivo: database.txt" RESET
              << endl;
       }
       return;

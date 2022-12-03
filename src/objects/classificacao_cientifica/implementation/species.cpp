@@ -25,3 +25,25 @@ bool Species::set_species_abbreviations(string abbreviations) {
 bool Species::set_species_category(string species_category) {
   return set_string(this->species_category, species_category);
 }
+
+void Species::species_all_search() {
+  cout << RESET BACKGROUND_BLUE FONT_WHITE
+      "\n -> Espécies " BACKGROUND_WHITE FONT_BLUE
+      "\n Nome da Espécie: " FONT_BLACK
+       << get_species_name() << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
+       << get_species_abbreviations()
+       << FONT_BLUE "\n Categoria da Espécie: " FONT_BLACK
+       << get_species_category() << RESET;
+}
+
+ostream &operator<<(ostream &os, const Species &species) {
+  os << species.name << "\n";
+  os << species.abbreviations << "\n";
+  os << species.species_category << "\n";
+  return os;
+}
+
+istream &operator>>(istream &is, Species &species) {
+  is >> species.name >> species.abbreviations >> species.species_category;
+  return is;
+}

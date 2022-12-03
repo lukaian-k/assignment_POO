@@ -4,9 +4,9 @@ string Animal::get_animal_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
 }
 
-string Animal::get_animal_binominalName() {
-  return binominalName == "" ? "Informe esta informação primeiro."
-                             : binominalName;
+string Animal::get_animal_binominal_name() {
+  return binominal_name == "" ? "Informe esta informação primeiro."
+                              : binominal_name;
 }
 
 string Animal::get_animal_descriptive_characteristics() {
@@ -24,8 +24,8 @@ bool Animal::set_animal_name(string name) {
   return set_string(this->name, name);
 }
 
-bool Animal::set_animal_binominalName(string binominalName) {
-  return set_string(this->binominalName, binominalName);
+bool Animal::set_animal_binominal_name(string binominal_name) {
+  return set_string(this->binominal_name, binominal_name);
 }
 
 bool Animal::set_animal_descriptive_characteristics(
@@ -43,23 +43,29 @@ void Animal::set_active() {
 }
 
 void Animal::all_search() {
-  cout << RESET BACKGROUND_WHITE FONT_GREEN "Nome do Animal: " FONT_BLACK
-       << name << FONT_GREEN "\nNome Cientifico: " FONT_BLACK << binominalName
-       << FONT_GREEN "\nCaracteristicas: " FONT_BLACK
-       << descriptive_characteristics << FONT_GREEN "\nEm Extinção? " FONT_BLACK
-       << extinction << "\n\n";
+  cout << RESET "\n" BACKGROUND_RED FONT_WHITE
+                " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
+                "\n Nome do Animal: " FONT_BLACK
+       << get_animal_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+       << get_animal_binominal_name()
+       << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
+       << get_animal_descriptive_characteristics()
+       << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_animal_extinction()
+       << RESET;
+  species_all_search();
+  cout << endl;
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
   os << "\n" << animal.name << "\n";
-  os << animal.binominalName << "\n";
+  os << animal.binominal_name << "\n";
   os << animal.descriptive_characteristics << "\n";
   os << animal.extinction << "\n";
   return os;
 }
 
 istream &operator>>(istream &is, Animal &animal) {
-  is >> animal.name >> animal.binominalName >>
+  is >> animal.name >> animal.binominal_name >>
       animal.descriptive_characteristics >> animal.extinction;
   return is;
 }

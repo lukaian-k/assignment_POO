@@ -39,7 +39,7 @@ void Menu::menu_select() {
   }
 
   case SEARCH: {
-    ifstream fp("database.txt", ios::in);
+    ifstream fp("database.txt");
     Animal animal;
     crud.search(fp, animal);
     fp.close();

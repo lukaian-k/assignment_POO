@@ -12,8 +12,8 @@ string replace(string word, char before, char after) {
 void conversion_strings(Animal &animal) {
   animal.set_animal_name(replace(animal.get_animal_name(), '-', ' '));
 
-  animal.set_animal_binominalName(
-      replace(animal.get_animal_binominalName(), '-', ' '));
+  animal.set_animal_binominal_name(
+      replace(animal.get_animal_binominal_name(), '-', ' '));
 
   animal.set_animal_descriptive_characteristics(
       replace(animal.get_animal_descriptive_characteristics(), '-', ' '));
@@ -32,8 +32,8 @@ void CRUD::add(ostream &fp, Animal &animal) {
 
     animal.set_animal_name(replace(name, ' ', '-'));
 
-    animal.set_animal_binominalName(
-        replace(animal.get_animal_binominalName(), ' ', '-'));
+    animal.set_animal_binominal_name(
+        replace(animal.get_animal_binominal_name(), ' ', '-'));
 
     animal.set_animal_descriptive_characteristics(
         replace(animal.get_animal_descriptive_characteristics(), ' ', '-'));
@@ -63,16 +63,18 @@ void CRUD::search(istream &fp, Animal &animal) {
         " 1 - Exibição Detalhada. \n"
         " 2 - Exibição Simples.   \n"
         " 3 - Busca Especifica.   \n"
-        " 0 - Voltar.  " RESET FONT_BLUE
+        " 0 - Voltar.             " RESET FONT_BLUE
          << endl;
 
+    cout << "\nDigite a funcionalidade desejada: ";
     fflush(stdin);
     cin >> select;
 
     switch (select) {
 
     case ALL: {
-      cout << RESET BACKGROUND_GREEN FONT_WHITE "TODOS >> ANIMAIS" << endl;
+      system(CLEAR);
+      cout << RESET BACKGROUND_GREEN FONT_WHITE " TODOS >> ANIMAIS \n" << endl;
 
       if (fp.good()) {
         while (!fp.eof()) {
@@ -84,8 +86,8 @@ void CRUD::search(istream &fp, Animal &animal) {
           animal.all_search();
         }
         char back;
-        cout << RESET BACKGROUND_GREEN FONT_WHITE
-            " Pressione qualquer tecla para continuar... ";
+        cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
+                      " Pressione qualquer tecla para continuar... ";
         cin >> back;
       } else {
         cout << RESET BACKGROUND_RED FONT_WHITE
@@ -95,9 +97,11 @@ void CRUD::search(istream &fp, Animal &animal) {
       return;
     }
     case MINIMUM: {
+      system(CLEAR);
       break;
     }
     case SPECIFY: {
+      system(CLEAR);
       break;
     }
     case BACK: {

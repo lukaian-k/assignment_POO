@@ -14,4 +14,9 @@ public:
   bool set_species_name(string name);
   bool set_species_abbreviations(string abbreviations);
   bool set_species_category(string species_category);
+
+  void species_all_search();
+
+  friend ostream &operator<<(ostream &os, const Species &species);
+  friend istream &operator>>(istream &is, Species &species);
 };

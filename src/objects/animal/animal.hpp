@@ -35,6 +35,8 @@ public:
   void minimum_search();
   void specify_search();
 
+  void conversion_strings(string (*replace)(string, char, char), char before, char after);
+
   friend ostream &operator<<(ostream &os, const Animal &animal);
   friend istream &operator>>(istream &is, Animal &animal);
 };

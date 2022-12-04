@@ -2,7 +2,7 @@
 
 Animal::Animal(string (*replace)(string, char, char)) : Species(replace) {
   char before = ' ';
-  char after = after;
+  char after = '-';
 
   cout << "nome: ";
   fflush(stdin);
@@ -77,6 +77,22 @@ void Animal::all_search() {
        << RESET;
   species_all_search();
   cout << endl;
+}
+
+void Animal::conversion_strings(string (*replace)(string, char, char),
+                                char before, char after) {
+
+  set_animal_name(replace(get_animal_name(), before, after));
+
+  set_animal_binominal_name(
+      replace(get_animal_binominal_name(), before, after));
+
+  set_animal_descriptive_characteristics(
+      replace(get_animal_descriptive_characteristics(), before, after));
+
+  set_animal_extinction(replace(get_animal_extinction(), before, after));
+
+  Species::conversion_strings(replace, before, after);
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {

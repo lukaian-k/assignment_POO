@@ -9,22 +9,6 @@ string replace(string word, char before, char after) {
   return word;
 }
 
-void conversion_strings(Animal &animal) {
-  char before = '-';
-  char after = ' ';
-
-  animal.set_animal_name(replace(animal.get_animal_name(), before, after));
-
-  animal.set_animal_binominal_name(
-      replace(animal.get_animal_binominal_name(), before, after));
-
-  animal.set_animal_descriptive_characteristics(
-      replace(animal.get_animal_descriptive_characteristics(), before, after));
-
-  animal.set_animal_extinction(
-      replace(animal.get_animal_extinction(), before, after));
-}
-
 void CRUD::add(ostream &fp) {
   if (!fp.good()) {
     cout << RESET BACKGROUND_RED FONT_WHITE
@@ -76,7 +60,7 @@ void CRUD::search(istream &fp) {
         while (!fp.eof()) {
 
           fp >> animal; // extracts from the file
-          conversion_strings(animal);
+          animal.conversion_strings(&replace, '-', ' ');
           animal.all_search();
         }
         char back;

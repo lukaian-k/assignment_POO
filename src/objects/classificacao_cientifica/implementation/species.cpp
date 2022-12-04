@@ -48,6 +48,15 @@ void Species::species_all_search() {
        << get_species_category() << RESET;
 }
 
+void Species::conversion_strings(string (*replace)(string, char, char),
+                                 char before, char after) {
+
+  set_species_name(replace(get_species_name(), before, after));
+  set_species_abbreviations(
+      replace(get_species_abbreviations(), before, after));
+  set_species_category(replace(get_species_category(), before, after));
+}
+
 ostream &operator<<(ostream &os, const Species &species) {
   os << "\n" << species.name << "\n";
   os << species.abbreviations << "\n";

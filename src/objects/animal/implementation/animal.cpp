@@ -1,29 +1,26 @@
 #include "../animal.hpp"
 
-Animal::Animal(string (*replace)(string, char, char)) {
+Animal::Animal(string (*replace)(string, char, char)) : Species(replace) {
+  char before = ' ';
+  char after = after;
+
   cout << "nome: ";
-  string name;
   fflush(stdin);
+
+  string name;
   getline(std::cin >> std::ws, name);
-  name = replace(name, ' ', '-');
-  cout << name;
+  name = replace(name, before, after);
 
   // animal
-  set_animal_name(replace(name, ' ', '-'));
+  set_animal_name(replace(name, before, after));
 
-  set_animal_binominal_name(replace(get_animal_binominal_name(), ' ', '-'));
+  set_animal_binominal_name(
+      replace(get_animal_binominal_name(), before, after));
 
   set_animal_descriptive_characteristics(
-      replace(get_animal_descriptive_characteristics(), ' ', '-'));
+      replace(get_animal_descriptive_characteristics(), before, after));
 
-  set_animal_extinction(replace(get_animal_extinction(), ' ', '-'));
-
-  // species
-  set_species_name(replace(get_species_name(), ' ', '-'));
-
-  set_species_abbreviations(replace(get_species_abbreviations(), ' ', '-'));
-
-  set_species_category(replace(get_species_category(), ' ', '-'));
+  set_animal_extinction(replace(get_animal_extinction(), before, after));
 }
 
 string Animal::get_animal_name() {

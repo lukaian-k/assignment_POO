@@ -10,16 +10,19 @@ string replace(string word, char before, char after) {
 }
 
 void conversion_strings(Animal &animal) {
-  animal.set_animal_name(replace(animal.get_animal_name(), '-', ' '));
+  char before = '-';
+  char after = ' ';
+
+  animal.set_animal_name(replace(animal.get_animal_name(), before, after));
 
   animal.set_animal_binominal_name(
-      replace(animal.get_animal_binominal_name(), '-', ' '));
+      replace(animal.get_animal_binominal_name(), before, after));
 
   animal.set_animal_descriptive_characteristics(
-      replace(animal.get_animal_descriptive_characteristics(), '-', ' '));
+      replace(animal.get_animal_descriptive_characteristics(), before, after));
 
   animal.set_animal_extinction(
-      replace(animal.get_animal_extinction(), '-', ' '));
+      replace(animal.get_animal_extinction(), before, after));
 }
 
 void CRUD::add(ostream &fp) {
@@ -30,6 +33,7 @@ void CRUD::add(ostream &fp) {
 
   } else {
     Animal animal(&replace);
+    cout << endl;
 
     fp << animal; // by inserting in the file
   }

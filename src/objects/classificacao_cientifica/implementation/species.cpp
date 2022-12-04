@@ -1,5 +1,17 @@
 #include "../species.hpp"
 
+Species::Species(string (*replace)(string, char, char)) {
+  char before = ' ';
+  char after = '-';
+
+  set_species_name(replace(get_species_name(), before, after));
+
+  set_species_abbreviations(
+      replace(get_species_abbreviations(), before, after));
+
+  set_species_category(replace(get_species_category(), before, after));
+}
+
 string Species::get_species_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
 }

@@ -1,6 +1,5 @@
 #include "../../../_config.hpp"
 #include "../auxiliary_objects/general_functions.hpp"
-#include <string>
 
 class Kingdom : public General_functions {
 private:

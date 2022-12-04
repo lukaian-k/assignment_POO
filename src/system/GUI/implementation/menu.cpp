@@ -32,16 +32,14 @@ void Menu::menu_select() {
 
   case REGISTER: {
     ofstream fp("database.txt", fstream::app);
-    Animal animal;
-    crud.add(fp, animal);
+    crud.add(fp);
     fp.close();
     break;
   }
 
   case SEARCH: {
     ifstream fp("database.txt");
-    Animal animal;
-    crud.search(fp, animal);
+    crud.search(fp);
     fp.close();
     break;
   }

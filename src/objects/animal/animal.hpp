@@ -15,7 +15,9 @@ private:
   bool is_active = true;
 
 public:
-  // Animal();
+  Animal() {}
+  Animal(string (*replace)(string, char, char));
+  
   string get_animal_name();
   string get_animal_binominal_name();
   string get_animal_descriptive_characteristics();

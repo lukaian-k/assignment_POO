@@ -8,9 +8,9 @@ private:
   bool is_valid = true;
 
 public:
-  void add(ostream &fp, Animal &animal);
-  void search(istream &fp, Animal &animal);
-  void update(ostream &fp, Animal &animal);
-  void remove(ostream &fp, Animal &animal);
+  void add(ostream &fp);
+  void search(istream &fp);
+  void update();
+  void remove();
   void size();
 };

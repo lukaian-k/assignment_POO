@@ -1,5 +1,31 @@
 #include "../animal.hpp"
 
+Animal::Animal(string (*replace)(string, char, char)) {
+  cout << "nome: ";
+  string name;
+  fflush(stdin);
+  getline(std::cin >> std::ws, name);
+  name = replace(name, ' ', '-');
+  cout << name;
+
+  // animal
+  set_animal_name(replace(name, ' ', '-'));
+
+  set_animal_binominal_name(replace(get_animal_binominal_name(), ' ', '-'));
+
+  set_animal_descriptive_characteristics(
+      replace(get_animal_descriptive_characteristics(), ' ', '-'));
+
+  set_animal_extinction(replace(get_animal_extinction(), ' ', '-'));
+
+  // species
+  set_species_name(replace(get_species_name(), ' ', '-'));
+
+  set_species_abbreviations(replace(get_species_abbreviations(), ' ', '-'));
+
+  set_species_category(replace(get_species_category(), ' ', '-'));
+}
+
 string Animal::get_animal_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
 }

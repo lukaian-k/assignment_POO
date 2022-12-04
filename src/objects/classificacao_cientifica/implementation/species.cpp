@@ -1,8 +1,7 @@
 #include "../species.hpp"
 
-Species::Species(string (*replace)(string, char, char)) {
-  char before = ' ';
-  char after = '-';
+Species::Species(string (*replace)(string, char, char), char before,
+                 char after) {
 
   set_species_name(replace(get_species_name(), before, after));
 

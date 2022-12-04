@@ -8,7 +8,7 @@ private:
 
 public:
   Species() {}
-  Species(string (*replace)(string, char, char));
+  Species(string (*replace)(string, char, char), char before, char after);
 
   string get_species_name();
   string get_species_abbreviations();
@@ -20,7 +20,8 @@ public:
 
   void species_all_search();
 
-  void conversion_strings(string (*replace)(string, char, char), char before, char after);
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
 
   friend ostream &operator<<(ostream &os, const Species &species);
   friend istream &operator>>(istream &is, Species &species);

@@ -1,6 +1,8 @@
 #include "../animal.hpp"
 
-Animal::Animal(string (*replace)(string, char, char)) : Species(replace) {
+Animal::Animal(string (*replace)(string, char, char))
+    : Species(replace, ' ', '-') {
+
   char before = ' ';
   char after = '-';
 

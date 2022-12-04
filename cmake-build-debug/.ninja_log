@@ -48,3 +48,8 @@
 1	519	1670194489088102809	CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/animal.cpp.o	353b11d205be3eef
 387	685	1670194489254767918	CMakeFiles/assignment_POO.dir/src/system/GUI/implementation/menu.cpp.o	754b2656e06c5b17
 685	765	1670194489334767170	assignment_POO	542d0d2d3b1137cb
+0	394	1670194779711829042	CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/species.cpp.o	7e9fa1b601e25338
+1	483	1670194779798494776	CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/crud.cpp.o	e9279f20564dc13d
+0	519	1670194779835161048	CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/animal.cpp.o	353b11d205be3eef
+395	708	1670194780025159005	CMakeFiles/assignment_POO.dir/src/system/GUI/implementation/menu.cpp.o	754b2656e06c5b17
+708	801	1670194780115158037	assignment_POO	542d0d2d3b1137cb

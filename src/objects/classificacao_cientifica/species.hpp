@@ -10,15 +10,15 @@ public:
   Species() {}
   Species(string (*replace)(string, char, char), char before, char after);
 
-  string get_species_name();
-  string get_species_abbreviations();
-  string get_species_category();
+  string get_name();
+  string get_abbreviations();
+  string get_category();
 
-  bool set_species_name(string name);
-  bool set_species_abbreviations(string abbreviations);
-  bool set_species_category(string species_category);
+  bool set_name(string name);
+  bool set_abbreviations(string abbreviations);
+  bool set_category(string species_category);
 
-  void species_all_search();
+  void all_search();
 
   void conversion_strings(string (*replace)(string, char, char), char before,
                           char after);

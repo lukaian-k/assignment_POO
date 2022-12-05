@@ -9,11 +9,11 @@ private:
 
 public:
   // Biologist();
-  string get_biologist_name();
-  string get_biologist_nationality();
-  string get_biologist_gender();
+  string get_name();
+  string get_nationality();
+  string get_gender();
 
-  bool set_biologist_name(string name);
-  bool set_biologist_nationality(string nationality);
-  bool set_biologist_gender(string gender);
+  bool set_name(string name);
+  bool set_nationality(string nationality);
+  bool set_gender(string gender);
 };

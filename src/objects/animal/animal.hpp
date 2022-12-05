@@ -18,24 +18,24 @@ public:
   Animal() {}
   Animal(string (*replace)(string, char, char));
 
-  string get_animal_name();
-  string get_animal_binominal_name();
-  string get_animal_descriptive_characteristics();
-  string get_animal_extinction();
+  string get_name();
+  string get_binominal_name();
+  string get_descriptive_characteristics();
+  string get_extinction();
   bool get_active();
 
-  bool set_animal_name(string name);
-  bool set_animal_binominal_name(string binominal_name);
-  bool
-  set_animal_descriptive_characteristics(string descriptive_characteristics);
-  bool set_animal_extinction(string extinction);
+  bool set_name(string name);
+  bool set_binominal_name(string binominal_name);
+  bool set_descriptive_characteristics(string descriptive_characteristics);
+  bool set_extinction(string extinction);
   void set_active();
 
   void all_search();
   void minimum_search();
   void specify_search();
 
-  void conversion_strings(string (*replace)(string, char, char), char before, char after);
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
 
   friend ostream &operator<<(ostream &os, const Animal &animal);
   friend istream &operator>>(istream &is, Animal &animal);

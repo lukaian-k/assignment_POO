@@ -14,52 +14,49 @@ Animal::Animal(string (*replace)(string, char, char))
   name = replace(name, before, after);
 
   // animal
-  set_animal_name(replace(name, before, after));
+  set_name(replace(name, before, after));
 
-  set_animal_binominal_name(
-      replace(get_animal_binominal_name(), before, after));
+  set_binominal_name(replace(get_binominal_name(), before, after));
 
-  set_animal_descriptive_characteristics(
-      replace(get_animal_descriptive_characteristics(), before, after));
+  set_descriptive_characteristics(
+      replace(get_descriptive_characteristics(), before, after));
 
-  set_animal_extinction(replace(get_animal_extinction(), before, after));
+  set_extinction(replace(get_extinction(), before, after));
 }
 
-string Animal::get_animal_name() {
+string Animal::get_name() {
   return name == "" ? "Informe esta informação primeiro." : name;
 }
 
-string Animal::get_animal_binominal_name() {
+string Animal::get_binominal_name() {
   return binominal_name == "" ? "Informe esta informação primeiro."
                               : binominal_name;
 }
 
-string Animal::get_animal_descriptive_characteristics() {
+string Animal::get_descriptive_characteristics() {
   return descriptive_characteristics == "" ? "Informe esta informação primeiro."
                                            : descriptive_characteristics;
 }
 
-string Animal::get_animal_extinction() {
+string Animal::get_extinction() {
   return extinction == "" ? "Informe esta informação primeiro." : extinction;
 }
 
 bool Animal::get_active() { return is_active == true ? true : false; }
 
-bool Animal::set_animal_name(string name) {
-  return set_string(this->name, name);
-}
+bool Animal::set_name(string name) { return set_string(this->name, name); }
 
-bool Animal::set_animal_binominal_name(string binominal_name) {
+bool Animal::set_binominal_name(string binominal_name) {
   return set_string(this->binominal_name, binominal_name);
 }
 
-bool Animal::set_animal_descriptive_characteristics(
+bool Animal::set_descriptive_characteristics(
     string descriptive_characteristics) {
   return set_string(this->descriptive_characteristics,
                     descriptive_characteristics);
 }
 
-bool Animal::set_animal_extinction(string extinction) {
+bool Animal::set_extinction(string extinction) {
   return set_string(this->extinction, extinction);
 }
 
@@ -71,28 +68,26 @@ void Animal::all_search() {
   cout << RESET "\n" BACKGROUND_RED FONT_WHITE
                 " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
                 "\n Nome do Animal: " FONT_BLACK
-       << get_animal_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
-       << get_animal_binominal_name()
-       << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
-       << get_animal_descriptive_characteristics()
-       << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_animal_extinction()
-       << RESET;
-  species_all_search();
+       << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+       << get_binominal_name() << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
+       << get_descriptive_characteristics()
+       << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction() << RESET;
+
+  Species::all_search();
   cout << endl;
 }
 
 void Animal::conversion_strings(string (*replace)(string, char, char),
                                 char before, char after) {
 
-  set_animal_name(replace(get_animal_name(), before, after));
+  set_name(replace(get_name(), before, after));
 
-  set_animal_binominal_name(
-      replace(get_animal_binominal_name(), before, after));
+  set_binominal_name(replace(get_binominal_name(), before, after));
 
-  set_animal_descriptive_characteristics(
-      replace(get_animal_descriptive_characteristics(), before, after));
+  set_descriptive_characteristics(
+      replace(get_descriptive_characteristics(), before, after));
 
-  set_animal_extinction(replace(get_animal_extinction(), before, after));
+  set_extinction(replace(get_extinction(), before, after));
 
   Species::conversion_strings(replace, before, after);
 }

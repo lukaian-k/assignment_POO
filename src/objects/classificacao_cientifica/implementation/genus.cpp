@@ -1,7 +1,7 @@
 #include "../genus.hpp"
 
-Genus::Genus(string (*replace)(string, char, char), char before,
-             char after) { //: Family(replace, ' ', '-')
+Genus::Genus(string (*replace)(string, char, char), char before, char after)
+    : Family(replace, ' ', '-') {
 
   set_name(replace(get_name(), before, after));
 

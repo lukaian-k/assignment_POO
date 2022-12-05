@@ -1,18 +1,15 @@
 #include "../class.hpp"
 
 string Classe::get_name() {
-  return class_name == "" ? "Informe esta informação primeiro." : class_name;
+  return name == "" ? "Informe esta informação primeiro." : name;
 }
 
 string Classe::get_description() {
-  return class_description == "" ? "Informe esta informação primeiro."
-                                 : class_description;
+  return description == "" ? "Informe esta informação primeiro." : description;
 }
 
-bool Classe::set_name(string class_name) {
-  return set_string(this->class_name, class_name);
-}
+bool Classe::set_name(string name) { return set_string(this->name, name); }
 
-bool Classe::set_description(string class_description) {
-  return set_string(this->class_description, class_description);
+bool Classe::set_description(string description) {
+  return set_string(this->description, description);
 }

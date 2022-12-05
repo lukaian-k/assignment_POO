@@ -2,8 +2,8 @@
 
 class Order : public Classe {
 private:
-  string order_name;
-  string order_description;
+  string name;
+  string description;
 
 public:
   Order() {}

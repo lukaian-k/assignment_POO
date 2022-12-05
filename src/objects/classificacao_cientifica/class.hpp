@@ -2,8 +2,8 @@
 
 class Classe : public Phylum {
 private:
-  string class_name;
-  string class_description;
+  string name;
+  string description;
 
 public:
   Classe() {}

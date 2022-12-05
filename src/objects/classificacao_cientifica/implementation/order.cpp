@@ -1,17 +1,48 @@
 #include "../order.hpp"
 
+Order::Order(string (*replace)(string, char, char), char before,
+             char after) { //: Classe(replace, ' ', '-') {
+
+  set_name(replace(get_name(), before, after));
+
+  set_description(replace(get_description(), before, after));
+}
+
 string Order::get_name() {
-  return order_name == "" ? "Informe esta informação primeiro." : order_name;
+  return name == "" ? "Informe esta informação primeiro." : name;
 }
 
 string Order::get_description() {
-  return order_description == "" ? "Informe esta informação primeiro." : order_description;
+  return description == "" ? "Informe esta informação primeiro." : description;
 }
 
-bool Order::set_name(string order_name) { 
-  return set_string(this->order_name, order_name); 
+bool Order::set_name(string name) { return set_string(this->name, name); }
+
+bool Order::set_description(string description) {
+  return set_string(this->description, description);
 }
 
-bool Order::set_description(string order_description) {
-  return set_string(this->order_description, order_description);
+void Order::all_search() {
+  cout << RESET BACKGROUND_BLUE FONT_WHITE
+      "\n -> Ordem " BACKGROUND_WHITE FONT_BLUE "\n Nome da Ordem: " FONT_BLACK
+       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() << RESET;
+}
+
+void Order::conversion_strings(string (*replace)(string, char, char),
+                               char before, char after) {
+
+  set_name(replace(get_name(), before, after));
+  set_description(replace(get_description(), before, after));
+}
+
+ostream &operator<<(ostream &os, const Order &order) {
+  os << "\n" << order.name << "\n";
+  os << order.description;
+  return os;
+}
+
+istream &operator>>(istream &is, Order &order) {
+  is >> order.name >> order.description;
+  return is;
 }

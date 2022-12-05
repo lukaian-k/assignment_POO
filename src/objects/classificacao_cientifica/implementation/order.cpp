@@ -1,7 +1,7 @@
 #include "../order.hpp"
 
 Order::Order(string (*replace)(string, char, char), char before,
-             char after) { //: Classe(replace, ' ', '-') {
+             char after) : Classe(replace, ' ', '-') {
 
   set_name(replace(get_name(), before, after));
 

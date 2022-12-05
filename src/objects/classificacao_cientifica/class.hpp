@@ -4,11 +4,22 @@ class Classe : public Phylum {
 private:
   string class_name;
   string class_description;
-  
+
 public:
-  //Classe(string class_name, string class_description) : Phylum (string name, string distinctive_characteristics);
-  string get_class_name();
-  string get_class_description();
-  bool set_class_name(string class_name);
-  bool set_class_description(string class_description);
+  Classe() {}
+  Classe(string (*replace)(string, char, char), char before, char after);
+
+  string get_name();
+  string get_description();
+  
+  bool set_name(string class_name);
+  bool set_description(string class_description);
+
+  void all_search();
+
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
+
+  friend ostream &operator<<(ostream &os, const Classe &classe);
+  friend istream &operator>>(istream &is, Classe &classe);
 };

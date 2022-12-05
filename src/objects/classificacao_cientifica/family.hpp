@@ -6,9 +6,20 @@ private:
   string description;
 
 public:
-  // Family();
-  string get_family_name();
-  string get_family_description();
-  bool set_family_name(string name);
-  bool set_family_description(string description);
+  Family() {}
+  Family(string (*replace)(string, char, char), char before, char after);
+
+  string get_name();
+  string get_description();
+
+  bool set_name(string name);
+  bool set_description(string description);
+
+  void all_search();
+
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
+
+  friend ostream &operator<<(ostream &os, const Family &family);
+  friend istream &operator>>(istream &is, Family &family);
 };

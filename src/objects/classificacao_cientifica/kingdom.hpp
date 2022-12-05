@@ -7,9 +7,20 @@ private:
   string description;
 
 public:
-  // Kingdom();
-  string get_kingdom_name();
-  string get_kingdom_description();
-  bool set_kingdom_name(string name);
-  bool set_kingdom_description(string description);
+  Kingdom() {}
+  Kingdom(string (*replace)(string, char, char), char before, char after);
+
+  string get_name();
+  string get_description();
+
+  bool set_name(string name);
+  bool set_description(string description);
+
+  void all_search();
+
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
+
+  friend ostream &operator<<(ostream &os, const Kingdom &kingdom);
+  friend istream &operator>>(istream &is, Kingdom &kingdom);
 };

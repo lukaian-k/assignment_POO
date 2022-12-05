@@ -6,9 +6,20 @@ private:
   string order_description;
 
 public:
-  //Order(string order_name, string order_description) : Classe (string class_name, string class_description);
-  string get_order_name();
-  string get_order_description();
-  bool set_order_name(string order_name);
-  bool set_order_description(string order_description);
+  Order() {}
+  Order(string (*replace)(string, char, char), char before, char after);
+
+  string get_name();
+  string get_description();
+
+  bool set_name(string order_name);
+  bool set_description(string order_description);
+
+  void all_search();
+
+  void conversion_strings(string (*replace)(string, char, char), char before,
+                          char after);
+
+  friend ostream &operator<<(ostream &os, const Order &order);
+  friend istream &operator>>(istream &is, Order &order);
 };

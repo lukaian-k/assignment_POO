@@ -1,7 +1,7 @@
 #include "../species.hpp"
 
-Species::Species(string (*replace)(string, char, char), char before,
-                 char after) {
+Species::Species(string (*replace)(string, char, char), char before, char after)
+    : Genus(replace, ' ', '-') {
 
   set_name(replace(get_name(), before, after));
 
@@ -36,7 +36,7 @@ bool Species::set_category(string species_category) {
 
 void Species::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
-      "\n -> Espécies " BACKGROUND_WHITE FONT_BLUE
+      "\n -> Espécie " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Espécie: " FONT_BLACK
        << get_name() << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
        << get_abbreviations()
@@ -55,7 +55,7 @@ void Species::conversion_strings(string (*replace)(string, char, char),
 ostream &operator<<(ostream &os, const Species &species) {
   os << "\n" << species.name << "\n";
   os << species.abbreviations << "\n";
-  os << species.species_category << "\n";
+  os << species.species_category;
   return os;
 }
 

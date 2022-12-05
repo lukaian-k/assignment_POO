@@ -74,6 +74,7 @@ void Animal::all_search() {
        << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction() << RESET;
 
   Species::all_search();
+  Genus::all_search();
   cout << endl;
 }
 
@@ -90,6 +91,7 @@ void Animal::conversion_strings(string (*replace)(string, char, char),
   set_extinction(replace(get_extinction(), before, after));
 
   Species::conversion_strings(replace, before, after);
+  Genus::conversion_strings(replace, before, after);
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
@@ -99,6 +101,7 @@ ostream &operator<<(ostream &os, const Animal &animal) {
   os << animal.extinction;
 
   os << static_cast<const Species &>(animal);
+  os << static_cast<const Genus &>(animal);
   return os;
 }
 
@@ -107,5 +110,6 @@ istream &operator>>(istream &is, Animal &animal) {
       animal.descriptive_characteristics >> animal.extinction;
 
   is >> static_cast<Species &>(animal);
+  is >> static_cast<Genus &>(animal);
   return is;
 }

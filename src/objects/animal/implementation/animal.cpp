@@ -60,51 +60,57 @@ void Animal::set_active() {
 }
 
 void Animal::all_search() {
-  cout << RESET "\n" BACKGROUND_RED FONT_WHITE
-                " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
-                "\n Nome do Animal: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
-       << get_binominal_name() << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
-       << get_descriptive_characteristics()
-       << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction() << RESET;
+  if (get_active()) {
+    cout << RESET "\n" BACKGROUND_RED FONT_WHITE
+                  " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
+                  "\n Nome do Animal: " FONT_BLACK
+         << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+         << get_binominal_name() << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
+         << get_descriptive_characteristics()
+         << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction()
+         << RESET;
 
-  Kingdom::all_search();
-  Phylum::all_search();
-  Classe::all_search();
-  Order::all_search();
-  Family::all_search();
-  Genus::all_search();
-  Species::all_search();
+    Kingdom::all_search();
+    Phylum::all_search();
+    Classe::all_search();
+    Order::all_search();
+    Family::all_search();
+    Genus::all_search();
+    Species::all_search();
 
-  cout << endl;
+    cout << endl;
+  }
 }
 
 void Animal::conversion_strings(string (*replace)(string, char, char),
                                 char before, char after) {
+  if (get_active()) {
 
-  set_name(replace(get_name(), before, after));
+    set_name(replace(get_name(), before, after));
 
-  set_binominal_name(replace(get_binominal_name(), before, after));
+    set_binominal_name(replace(get_binominal_name(), before, after));
 
-  set_descriptive_characteristics(
-      replace(get_descriptive_characteristics(), before, after));
+    set_descriptive_characteristics(
+        replace(get_descriptive_characteristics(), before, after));
 
-  set_extinction(replace(get_extinction(), before, after));
+    set_extinction(replace(get_extinction(), before, after));
 
-  Species::conversion_strings(replace, before, after);
-  Genus::conversion_strings(replace, before, after);
-  Family::conversion_strings(replace, before, after);
-  Order::conversion_strings(replace, before, after);
-  Classe::conversion_strings(replace, before, after);
-  Phylum::conversion_strings(replace, before, after);
-  Kingdom::conversion_strings(replace, before, after);
+    Species::conversion_strings(replace, before, after);
+    Genus::conversion_strings(replace, before, after);
+    Family::conversion_strings(replace, before, after);
+    Order::conversion_strings(replace, before, after);
+    Classe::conversion_strings(replace, before, after);
+    Phylum::conversion_strings(replace, before, after);
+    Kingdom::conversion_strings(replace, before, after);
+  }
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
   os << "\n" << animal.name << "\n";
   os << animal.binominal_name << "\n";
   os << animal.descriptive_characteristics << "\n";
-  os << animal.extinction;
+  os << animal.extinction << "\n";
+  os << animal.is_active;
 
   os << static_cast<const Species &>(animal);
   os << static_cast<const Genus &>(animal);
@@ -118,7 +124,8 @@ ostream &operator<<(ostream &os, const Animal &animal) {
 
 istream &operator>>(istream &is, Animal &animal) {
   is >> animal.name >> animal.binominal_name >>
-      animal.descriptive_characteristics >> animal.extinction;
+      animal.descriptive_characteristics >> animal.extinction >>
+      animal.is_active;
 
   is >> static_cast<Species &>(animal);
   is >> static_cast<Genus &>(animal);

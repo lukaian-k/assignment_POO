@@ -73,6 +73,7 @@ void Animal::all_search() {
        << get_descriptive_characteristics()
        << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction() << RESET;
 
+  Kingdom::all_search();
   Phylum::all_search();
   Classe::all_search();
   Order::all_search();
@@ -101,6 +102,7 @@ void Animal::conversion_strings(string (*replace)(string, char, char),
   Order::conversion_strings(replace, before, after);
   Classe::conversion_strings(replace, before, after);
   Phylum::conversion_strings(replace, before, after);
+  Kingdom::conversion_strings(replace, before, after);
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
@@ -115,6 +117,7 @@ ostream &operator<<(ostream &os, const Animal &animal) {
   os << static_cast<const Order &>(animal);
   os << static_cast<const Classe &>(animal);
   os << static_cast<const Phylum &>(animal);
+  os << static_cast<const Kingdom &>(animal);
   return os;
 }
 
@@ -128,5 +131,6 @@ istream &operator>>(istream &is, Animal &animal) {
   is >> static_cast<Order &>(animal);
   is >> static_cast<Classe &>(animal);
   is >> static_cast<Phylum &>(animal);
+  is >> static_cast<Kingdom &>(animal);
   return is;
 }

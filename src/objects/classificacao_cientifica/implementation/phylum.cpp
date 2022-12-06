@@ -1,11 +1,12 @@
 #include "../phylum.hpp"
 
-Phylum::Phylum(string (*replace)(string, char, char), char before,
-             char after) : Kingdom(replace, ' ', '-') {
+Phylum::Phylum(string (*replace)(string, char, char), char before, char after)
+    : Kingdom(replace, ' ', '-') {
 
   set_name(replace(get_name(), before, after));
 
-  set_distinctive_characteristics(replace(get_distinctive_characteristics(), before, after));
+  set_distinctive_characteristics(
+      replace(get_distinctive_characteristics(), before, after));
 }
 
 string Phylum::get_name() {
@@ -27,16 +28,18 @@ bool Phylum::set_distinctive_characteristics(
 
 void Phylum::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
-      "\n -> Phylum " BACKGROUND_WHITE FONT_BLUE "\n Nome da Phylum: " FONT_BLACK
+      "\n -> Phylum " BACKGROUND_WHITE FONT_BLUE
+      "\n Nome da Phylum: " FONT_BLACK
        << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
        << get_distinctive_characteristics() << RESET;
 }
 
 void Phylum::conversion_strings(string (*replace)(string, char, char),
-                               char before, char after) {
+                                char before, char after) {
 
   set_name(replace(get_name(), before, after));
-  set_distinctive_characteristics(replace(get_distinctive_characteristics(), before, after));
+  set_distinctive_characteristics(
+      replace(get_distinctive_characteristics(), before, after));
 }
 
 ostream &operator<<(ostream &os, const Phylum &phylum) {

@@ -12,3 +12,17 @@ bool General_functions::set_string(string &before, string after) {
     return answer;
   }
 }
+
+string General_functions::builder_string(string (*replace)(string, char, char),
+                                         string text) {
+
+  char before = ' ';
+  char after = '-';
+
+  cout << RESET BOLD FONT_WHITE << text << RESET;
+  fflush(stdin);
+
+  string add;
+  getline(std::cin >> std::ws, add);
+  return replace(add, before, after);
+}

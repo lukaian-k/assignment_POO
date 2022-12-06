@@ -3,20 +3,15 @@
 Animal::Animal(string (*replace)(string, char, char))
     : Species(replace, ' ', '-') {
 
+  system(CLEAR);
+  cout << RESET BACKGROUND_BLUE FONT_WHITE " txt " << RESET "\n\n";
+
   char before = ' ';
   char after = '-';
 
-  cout << "Informe o Nome: ";
-  fflush(stdin);
+  set_name(builder_string(replace, "Insira o nome: "));
 
-  string name;
-  getline(std::cin >> std::ws, name);
-  name = replace(name, before, after);
-
-  // animal
-  set_name(replace(name, before, after));
-
-  set_binominal_name(replace(get_binominal_name(), before, after));
+  set_binominal_name(builder_string(replace, "Insira o arroz: "));
 
   set_descriptive_characteristics(
       replace(get_descriptive_characteristics(), before, after));

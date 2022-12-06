@@ -32,7 +32,7 @@ public:
 
   void all_search();
   void minimum_search();
-  void specify_search();
+  bool specify_search(string name);
 
   void conversion_strings(string (*replace)(string, char, char), char before,
                           char after);

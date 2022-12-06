@@ -1,4 +1,5 @@
 #include "../animal.hpp"
+#include <bits/stdc++.h>
 
 Animal::Animal(string (*replace)(string, char, char))
     : Species(replace, ' ', '-') {
@@ -78,6 +79,23 @@ void Animal::all_search() {
 
     cout << endl;
   }
+}
+
+bool Animal::specify_search(string name) {
+  if (!get_active())
+    return false;
+
+  transform(name.begin(), name.end(), name.begin(), ::tolower);
+
+  string get = get_name();
+  transform(get.begin(), get.end(), get.begin(), ::tolower);
+
+  if (name == get) {
+    all_search();
+    return true;
+  }
+
+  return false;
 }
 
 void Animal::conversion_strings(string (*replace)(string, char, char),

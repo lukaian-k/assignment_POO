@@ -63,6 +63,7 @@ void CRUD::search(istream &fp) {
           animal.conversion_strings(&replace, '-', ' ');
           animal.all_search();
         }
+
         char back;
         cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
                       " Pressione qualquer tecla para continuar... " RESET;
@@ -73,12 +74,41 @@ void CRUD::search(istream &fp) {
 
     case MINIMUM: {
       system(CLEAR);
-      break;
+      return;
     }
 
     case SPECIFY: {
       system(CLEAR);
-      break;
+      cout << RESET BACKGROUND_GREEN FONT_WHITE
+          " BUSCA ESPECÍFICA >> ANIMAIS \n"
+           << endl;
+
+      if (!fp.good()) {
+        cout << RESET BACKGROUND_RED FONT_WHITE
+            "Erro ao abrir o arquivo: database.txt" RESET
+             << endl;
+      } else {
+        cout << RESET BOLD FONT_BLUE << "Qual animal deseja buscar? " << RESET;
+        fflush(stdin);
+
+        string name;
+        getline(std::cin >> std::ws, name);
+
+        while (!fp.eof()) {
+
+          fp >> animal; // extracts from the file
+          animal.conversion_strings(&replace, '-', ' ');
+
+          if (animal.specify_search(name))
+            break;
+        }
+
+        char back;
+        cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
+                      " Pressione qualquer tecla para continuar... " RESET;
+        cin >> back;
+      }
+      return;
     }
 
     case BACK: {

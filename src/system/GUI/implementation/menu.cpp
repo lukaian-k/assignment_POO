@@ -16,7 +16,6 @@ void Menu::text_menu() {
       " 2 - Buscar animal.    \n"
       " 3 - Atualizar animal. \n"
       " 4 - Remover animal.   \n"
-      " 5 - Imprimir arquivo. \n"
       " 0 - Sair do sistema!  " RESET FONT_BLUE
        << endl;
 }
@@ -51,10 +50,6 @@ void Menu::menu_select() {
 
   case DELETE: {
     // crud.remove();
-    break;
-  }
-
-  case PRINT: {
     break;
   }
 

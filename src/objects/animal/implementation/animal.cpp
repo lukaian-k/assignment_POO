@@ -6,7 +6,7 @@ Animal::Animal(string (*replace)(string, char, char))
   char before = ' ';
   char after = '-';
 
-  cout << "nome: ";
+  cout << "Informe o Nome: ";
   fflush(stdin);
 
   string name;

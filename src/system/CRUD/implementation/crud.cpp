@@ -168,10 +168,28 @@ void CRUD::remove(fstream &fp) {
       fp >> animal; // extracts from the file
 
       if (animal.specify_search(name)) {
+
+        cout << RESET BOLD FONT_RED "\nDeseja deletar: " FONT_GREEN
+                                    "(1: SIM | 0: NÃO) " RESET;
+        int answer;
+        fflush(stdin);
+        cin >> answer;
         animal.set_active();
+
+        if (answer != 1) {
+          cout << RESET BACKGROUND_RED FONT_WHITE
+              "\n\n OPERAÇÃO CANCELADA! \n" RESET
+               << endl;
+
+          break;
+        }
 
         fp.seekp(pos);
         fp << animal;
+
+        cout << RESET BACKGROUND_GREEN FONT_WHITE
+            "\n\n A OPERAÇÃO FOI CONCLUIDA COM ÊXITO! \n" RESET
+             << endl;
 
         break;
       }
@@ -189,4 +207,5 @@ void CRUD::remove(fstream &fp) {
   }
 }
 
-void CRUD::size() {}
+void CRUD::size() {
+} // tentar usar a var global da class para cirar o contador de animal

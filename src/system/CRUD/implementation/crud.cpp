@@ -32,6 +32,7 @@ void CRUD::_proceed() {
   cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
                 " Pressione a tecla ENTER para continuar... " RESET;
 
+  cin.ignore();
   cin.get();
 }
 

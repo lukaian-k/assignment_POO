@@ -92,7 +92,16 @@ void CRUD::search(istream &fp) {
         fflush(stdin);
 
         string name;
-        getline(std::cin >> std::ws, name);
+
+        while (name == "") {
+          getline(std::cin >> std::ws, name);
+
+          if (name == "" || name == " ") {
+            cout << RESET "\n" BACKGROUND_WHITE FONT_RED
+                          " Preencha o campo. " RESET
+                 << endl;
+          }
+        }
 
         while (!fp.eof()) {
 

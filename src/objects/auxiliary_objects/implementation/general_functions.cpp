@@ -24,5 +24,10 @@ string General_functions::builder_string(string (*replace)(string, char, char),
 
   string add;
   getline(std::cin >> std::ws, add);
+
+  if (add == "" || add == " ") {
+    add = "Informe esta informação primeiro.";
+  }
+
   return replace(add, before, after);
 }

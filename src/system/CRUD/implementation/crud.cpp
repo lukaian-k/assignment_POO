@@ -172,12 +172,14 @@ void CRUD::update(fstream &fp) {
 
       if (animal.specify_search(name)) {
 
-        cout << RESET BOLD FONT_RED "\nDeseja deletar: " FONT_GREEN
+        cout << RESET BOLD FONT_RED "\nDeseja atualizar? " FONT_GREEN
                                     "(1: SIM | 0: NÃO) " RESET;
-        int answer;
-        fflush(stdin);
-        cin >> answer;
+
         animal.set_active();
+        fflush(stdin);
+
+        int answer;
+        cin >> answer;
 
         if (answer != 1) {
           cout << RESET BACKGROUND_RED FONT_WHITE
@@ -228,12 +230,14 @@ void CRUD::remove(fstream &fp) {
 
       if (animal.specify_search(name)) {
 
-        cout << RESET BOLD FONT_RED "\nDeseja deletar: " FONT_GREEN
+        cout << RESET BOLD FONT_RED "\nDeseja deletar? " FONT_GREEN
                                     "(1: SIM | 0: NÃO) " RESET;
-        int answer;
-        fflush(stdin);
-        cin >> answer;
+
         animal.set_active();
+        fflush(stdin);
+
+        int answer;
+        cin >> answer;
 
         if (answer != 1) {
           cout << RESET BACKGROUND_RED FONT_WHITE

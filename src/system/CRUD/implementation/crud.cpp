@@ -14,7 +14,7 @@ string replace(string word, char before, char after) {
 template <typename SEARCH> SEARCH CRUD::_search() {
   SEARCH search;
 
-  while (search == "") {
+  while (typeid(search) == typeid(string) && search == "") {
     fflush(stdin);
     getline(std::cin >> std::ws, search);
 
@@ -25,6 +25,13 @@ template <typename SEARCH> SEARCH CRUD::_search() {
   }
 
   return search;
+}
+
+void CRUD::_proceed() {
+
+  cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
+                " Pressione qualquer tecla para continuar... " RESET;
+  getchar();
 }
 
 void CRUD::add(ostream &fp) {
@@ -85,16 +92,14 @@ void CRUD::search(istream &fp) {
           animal.all_search();
         }
 
-        char back;
-        cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
-                      " Pressione qualquer tecla para continuar... " RESET;
-        cin >> back;
+        _proceed();
       }
       return;
     }
 
     case MINIMUM: {
       system(CLEAR);
+      _proceed();
       return;
     }
 
@@ -127,10 +132,7 @@ void CRUD::search(istream &fp) {
           }
         }
 
-        char back;
-        cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
-                      " Pressione qualquer tecla para continuar... " RESET;
-        cin >> back;
+        _proceed();
       }
 
       return;
@@ -146,7 +148,62 @@ void CRUD::search(istream &fp) {
   }
 }
 
-void CRUD::update(fstream &fp) {}
+void CRUD::update(fstream &fp) {
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " ATUALIZAR >> ANIMAL \n"
+       << endl;
+
+  if (!fp.good()) {
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt" RESET
+         << endl;
+  } else {
+    cout << RESET BOLD FONT_BLUE << "Qual animal deseja buscar? " << RESET;
+
+    string name = _search<string>();
+    Animal animal;
+
+    while (!fp.eof()) {
+
+      auto pos = fp.tellg();
+      fp >> animal; // extracts from the file
+
+      if (animal.specify_search(name)) {
+
+        cout << RESET BOLD FONT_RED "\nDeseja deletar: " FONT_GREEN
+                                    "(1: SIM | 0: NÃO) " RESET;
+        int answer;
+        fflush(stdin);
+        cin >> answer;
+        animal.set_active();
+
+        if (answer != 1) {
+          cout << RESET BACKGROUND_RED FONT_WHITE
+              "\n\n OPERAÇÃO CANCELADA! \n" RESET
+               << endl;
+
+          break;
+        }
+
+        fp.seekp(pos);
+        fp << animal;
+
+        cout << RESET BACKGROUND_GREEN FONT_WHITE
+            "\n\n A OPERAÇÃO FOI CONCLUIDA COM ÊXITO! \n" RESET
+             << endl;
+
+        break;
+      }
+
+      if (fp.eof()) {
+        cout << RESET "\n" BACKGROUND_WHITE FONT_GREEN " Nenhum animal: ("
+             << name << ") foi encontrado! " RESET << endl;
+      }
+    }
+
+    _proceed();
+  }
+}
 
 void CRUD::remove(fstream &fp) {
   system(CLEAR);
@@ -200,10 +257,7 @@ void CRUD::remove(fstream &fp) {
       }
     }
 
-    char back;
-    cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
-                  " Pressione qualquer tecla para continuar... " RESET;
-    cin >> back;
+    _proceed();
   }
 }
 

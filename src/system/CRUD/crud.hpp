@@ -8,6 +8,7 @@ private:
   bool is_valid = true;
 
   template <typename SEARCH> SEARCH _search();
+  void _proceed();
 
 public:
   void add(ostream &fp);

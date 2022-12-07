@@ -172,10 +172,55 @@ void CRUD::update(fstream &fp) {
 
       if (animal.specify_search(name)) {
 
+        enum { FULL = 1, SPECIFY, DONE = 0 };
+        bool repeat = true;
+
+        while (repeat) {
+          system(CLEAR);
+
+          if (is_valid == false) {
+            cout << BOLD FONT_RED "Selecione uma opção valida! \n" << endl;
+            is_valid = true;
+          }
+
+          cout << RESET BOLD BACKGROUND_BLUE
+              "        OPÇÕES >> UPDATE        \n" RESET BACKGROUND_WHITE
+                  FONT_BLUE " 1 - Reescrever completamente.  \n"
+              " 2 - Apenas o desejado.         \n"
+              " 0 - Continuar...               \n" RESET
+               << endl;
+
+          fflush(stdin);
+
+          cout << RESET FONT_BLUE "Selecione uma das opções: " RESET;
+          cin >> select;
+
+          switch (select) {
+
+          case FULL: {
+            animal = Animal(&replace);
+
+            cout << endl;
+            break;
+          }
+
+          case SPECIFY: {
+            break;
+          }
+
+          case DONE: {
+            repeat = !repeat;
+            break;
+          }
+
+          default:
+            is_valid = false;
+          }
+        }
+
         cout << RESET BOLD FONT_RED "\nDeseja atualizar? " FONT_GREEN
                                     "(1: SIM | 0: NÃO) " RESET;
 
-        animal.set_active();
         fflush(stdin);
 
         int answer;

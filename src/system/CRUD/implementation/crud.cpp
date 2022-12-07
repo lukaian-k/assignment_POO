@@ -1,15 +1,33 @@
 #include "../crud.hpp"
 
 string replace(string word, char before, char after) {
+
   for (int i = 0; i <= word.length(); i++) {
     if (word[i] == before) {
       word[i] = after;
     }
   }
+
   return word;
 }
 
+template <typename SEARCH> SEARCH CRUD::_search() {
+  SEARCH search;
+
+  while (search == "") {
+    getline(std::cin >> std::ws, search);
+
+    if (search == "" || search == " ") {
+      cout << RESET "\n" BACKGROUND_WHITE FONT_RED " Preencha o campo. " RESET
+           << endl;
+    }
+  }
+
+  return search;
+}
+
 void CRUD::add(ostream &fp) {
+
   if (!fp.good()) {
     cout << RESET BACKGROUND_RED FONT_WHITE
         "Erro ao abrir o arquivo: database.txt" RESET
@@ -24,6 +42,7 @@ void CRUD::add(ostream &fp) {
 }
 
 void CRUD::search(istream &fp) {
+
   Animal animal;
 
   while (true) {
@@ -50,7 +69,8 @@ void CRUD::search(istream &fp) {
 
     case ALL: {
       system(CLEAR);
-      cout << RESET BACKGROUND_GREEN FONT_WHITE " TODOS >> ANIMAIS \n" << endl;
+      cout << RESET BOLD BACKGROUND_GREEN FONT_WHITE " TODOS >> ANIMAIS \n"
+           << endl;
 
       if (!fp.good()) {
         cout << RESET BACKGROUND_RED FONT_WHITE
@@ -79,7 +99,7 @@ void CRUD::search(istream &fp) {
 
     case SPECIFY: {
       system(CLEAR);
-      cout << RESET BACKGROUND_GREEN FONT_WHITE
+      cout << RESET BOLD BACKGROUND_GREEN FONT_WHITE
           " BUSCA ESPECÍFICA >> ANIMAIS \n"
            << endl;
 
@@ -91,17 +111,7 @@ void CRUD::search(istream &fp) {
         cout << RESET BOLD FONT_BLUE << "Qual animal deseja buscar? " << RESET;
         fflush(stdin);
 
-        string name;
-
-        while (name == "") {
-          getline(std::cin >> std::ws, name);
-
-          if (name == "" || name == " ") {
-            cout << RESET "\n" BACKGROUND_WHITE FONT_RED
-                          " Preencha o campo. " RESET
-                 << endl;
-          }
-        }
+        string name = _search<string>();
 
         while (!fp.eof()) {
 
@@ -110,6 +120,11 @@ void CRUD::search(istream &fp) {
 
           if (animal.specify_search(name))
             break;
+
+          if (fp.eof()) {
+            cout << RESET "\n" BACKGROUND_WHITE FONT_GREEN " Nenhum animal: ("
+                 << name << ") foi encontrado! " RESET << endl;
+          }
         }
 
         char back;
@@ -117,6 +132,7 @@ void CRUD::search(istream &fp) {
                       " Pressione qualquer tecla para continuar... " RESET;
         cin >> back;
       }
+
       return;
     }
 

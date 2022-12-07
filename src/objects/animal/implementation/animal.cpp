@@ -5,7 +5,8 @@ Animal::Animal(string (*replace)(string, char, char))
     : Species(replace, ' ', '-') {
 
   system(CLEAR);
-  cout << RESET BACKGROUND_BLUE FONT_WHITE " txt " << RESET "\n\n";
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> ANIMAL "
+       << RESET "\n\n";
 
   char before = ' ';
   char after = '-';

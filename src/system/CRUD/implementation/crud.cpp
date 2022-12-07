@@ -30,8 +30,9 @@ template <typename SEARCH> SEARCH CRUD::_search() {
 void CRUD::_proceed() {
 
   cout << RESET "\n\n" BACKGROUND_GREEN FONT_WHITE
-                " Pressione qualquer tecla para continuar... " RESET;
-  getchar();
+                " Pressione a tecla ENTER para continuar... " RESET;
+
+  cin.get();
 }
 
 void CRUD::add(ostream &fp) {

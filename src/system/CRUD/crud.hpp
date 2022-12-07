@@ -12,7 +12,7 @@ private:
 public:
   void add(ostream &fp);
   void search(istream &fp);
-  void update();
-  void remove();
+  void update(fstream &fp);
+  void remove(fstream &fp);
   void size();
 };

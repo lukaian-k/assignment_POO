@@ -44,12 +44,17 @@ void Menu::menu_select() {
   }
 
   case UPDATE: {
-    // crud.update();
+    fstream fp("database.txt");
+    crud.update(fp);
+    fp.close();
+    break;
     break;
   }
 
   case DELETE: {
-    // crud.remove();
+    fstream fp("database.txt");
+    crud.remove(fp);
+    fp.close();
     break;
   }
 

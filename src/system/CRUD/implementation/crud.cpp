@@ -205,6 +205,109 @@ void CRUD::update(fstream &fp) {
           }
 
           case SPECIFY: {
+            enum {
+              NAME = 1,
+              KINGDOM,
+              PHYLUM,
+              CLASS,
+              ORDER,
+              FAMILY,
+              GENUS,
+              SPECIES
+            };
+
+            while (repeat) {
+              system(CLEAR);
+
+              if (is_valid == false) {
+                cout << BOLD FONT_RED "Selecione uma opção valida! \n" << endl;
+                is_valid = true;
+              }
+
+              cout << RESET BACKGROUND_BLUE FONT_WHITE
+                  "\n Escolha uma opção para altera-la \n" RESET
+                      BACKGROUND_WHITE FONT_BLUE
+                  " 1 - Nome >> Animal.              \n"
+                  " 2 - Nome >> Reino.               \n"
+                  " 3 - Nome >> Filo.                \n"
+                  " 4 - Nome >> Classe.              \n"
+                  " 5 - Nome >> Ordem.               \n"
+                  " 6 - Nome >> Família.             \n"
+                  " 7 - Nome >> Género.              \n"
+                  " 8 - Nome >> Espécie.             \n"
+                  " 0 - Voltar.                      \n" RESET
+                   << endl;
+
+              fflush(stdin);
+
+              cout << RESET FONT_BLUE "Selecione uma das opções: " RESET;
+              cin >> select;
+
+              if (select != 0) {
+                cout << RESET FONT_GREEN "\nPreencha o campo: " RESET;
+              }
+
+              switch (select) {
+
+              case NAME: {
+                animal.set_name(_search<string>());
+
+                break;
+              }
+
+              case KINGDOM: {
+                animal.Kingdom::set_name(_search<string>());
+
+                break;
+              }
+
+              case PHYLUM: {
+                animal.Phylum::set_name(_search<string>());
+
+                break;
+              }
+
+              case CLASS: {
+                animal.Classe::set_name(_search<string>());
+
+                break;
+              }
+
+              case ORDER: {
+                animal.Order::set_name(_search<string>());
+
+                break;
+              }
+
+              case FAMILY: {
+                animal.Family::set_name(_search<string>());
+
+                break;
+              }
+
+              case GENUS: {
+                animal.Genus::set_name(_search<string>());
+
+                break;
+              }
+
+              case SPECIES: {
+                animal.Species::set_name(_search<string>());
+
+                break;
+              }
+
+              case DONE: {
+                repeat = !repeat;
+                break;
+              }
+
+              default:
+                is_valid = false;
+              }
+            }
+
+            repeat = true;
             break;
           }
 

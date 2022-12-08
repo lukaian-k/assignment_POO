@@ -13,12 +13,11 @@ Animal::Animal(string (*replace)(string, char, char))
 
   set_name(builder_string(replace, "Insira o nome: "));
 
-  set_binominal_name(builder_string(replace, "Insira o arroz: "));
+  set_binominal_name(builder_string(replace, "Insira o nome cientifico: "));
 
-  set_descriptive_characteristics(
-      replace(get_descriptive_characteristics(), before, after));
+  set_descriptive_characteristics(builder_string(replace, "Insira a descrição do Aniaml: "));
 
-  set_extinction(replace(get_extinction(), before, after));
+  set_extinction(builder_string(replace, "Esta extinto: "));
 }
 
 string Animal::get_name() {

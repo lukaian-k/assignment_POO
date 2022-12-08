@@ -3,9 +3,13 @@
 Kingdom::Kingdom(string (*replace)(string, char, char), char before,
                  char after) {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> REINO "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
+
+  set_description(builder_string(replace, "Descrição do reino: "));
 }
 
 string Kingdom::get_name() {

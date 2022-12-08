@@ -3,11 +3,15 @@
 Species::Species(string (*replace)(string, char, char), char before, char after)
     : Genus(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> ESPÉCIES "
+       << RESET "\n\n";
 
-  set_abbreviations(replace(get_abbreviations(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
 
-  set_category(replace(get_category(), before, after));
+  set_abbreviations(builder_string(replace, "Abreviação: "));
+
+  set_category(builder_string(replace, "Categoria: "));
 }
 
 string Species::get_name() {

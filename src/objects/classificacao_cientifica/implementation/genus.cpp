@@ -3,9 +3,13 @@
 Genus::Genus(string (*replace)(string, char, char), char before, char after)
     : Family(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> GENERO "
+       << RESET "\n\n";
 
-  set_aspects(replace(get_aspects(), before, after));
+  set_name(builder_string(replace, "Insira o genero: "));
+
+  set_aspects(builder_string(replace, "Aspectos: "));
 }
 
 string Genus::get_name() {

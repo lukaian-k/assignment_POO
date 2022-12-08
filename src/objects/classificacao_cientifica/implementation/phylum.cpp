@@ -3,10 +3,13 @@
 Phylum::Phylum(string (*replace)(string, char, char), char before, char after)
     : Kingdom(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FILO "
+       << RESET "\n\n";
 
-  set_distinctive_characteristics(
-      replace(get_distinctive_characteristics(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
+
+  set_distinctive_characteristics(builder_string(replace, "Caracteristicas que se distiguem: "));
 }
 
 string Phylum::get_name() {

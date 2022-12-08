@@ -3,9 +3,13 @@
 Family::Family(string (*replace)(string, char, char), char before, char after)
     : Order(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FAMILIA "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome da familia: "));
+
+  set_description(builder_string(replace, "Insira a descrição da familia"));
 }
 
 string Family::get_name() {

@@ -81,6 +81,17 @@ void Animal::all_search() {
   }
 }
 
+void Animal::minimum_search(){
+  if (get_active()) {
+    cout << RESET "\n" BACKGROUND_RED FONT_WHITE
+                  " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
+                  "\n Nome do Animal: " FONT_BLACK
+         << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+         << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK << get_extinction()
+         << RESET;
+  }        
+}
+
 bool Animal::specify_search(string name) {
   if (!get_active())
     return false;

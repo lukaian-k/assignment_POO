@@ -101,7 +101,23 @@ void CRUD::search(istream &fp) {
 
     case MINIMUM: {
       system(CLEAR);
-      _proceed();
+      cout << RESET BOLD BACKGROUND_GREEN FONT_WHITE " TODOS >> ANIMAIS \n"
+           << endl;
+
+      if (!fp.good()) {
+        cout << RESET BACKGROUND_RED FONT_WHITE
+            "Erro ao abrir o arquivo: database.txt" RESET
+             << endl;
+      } else {
+        while (!fp.eof()) {
+
+          fp >> animal; // extracts from the file
+          animal.conversion_strings(&replace, '-', ' ');
+          animal.minimum_search();
+        }
+
+        _proceed();
+      }
       return;
     }
 

@@ -41,8 +41,8 @@ void Order::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Order &order) {
-  os << "\n" << order.name << "\n";
-  os << order.description;
+  os << order.name << "\n";
+  os << order.description << "\n";
   return os;
 }
 

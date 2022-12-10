@@ -8,7 +8,9 @@ private:
   string gender;
 
 public:
-  // Biologist();
+  Biologist() {}
+  Biologist(string (*replace)(string, char, char));
+  
   string get_name();
   string get_nationality();
   string get_gender();

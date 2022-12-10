@@ -8,7 +8,9 @@ private:
   string discovery_point;
 
 public:
-  // Localization();
+  Localization() {}
+  Localization(string (*replace)(string, char, char));
+
   string get_geographical_distribution();
   string get_habitat();
   string get_discovery_point();

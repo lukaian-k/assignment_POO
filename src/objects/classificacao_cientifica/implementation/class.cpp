@@ -42,8 +42,8 @@ void Classe::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Classe &classe) {
-  os << "\n" << classe.name << "\n";
-  os << classe.description;
+  os << classe.name << "\n";
+  os << classe.description << "\n";
   return os;
 }
 

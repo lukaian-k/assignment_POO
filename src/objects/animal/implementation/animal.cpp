@@ -15,7 +15,8 @@ Animal::Animal(string (*replace)(string, char, char))
 
   set_binominal_name(builder_string(replace, "Insira o nome cientifico: "));
 
-  set_descriptive_characteristics(builder_string(replace, "Insira a descrição do Aniaml: "));
+  set_descriptive_characteristics(
+      builder_string(replace, "Insira a descrição do Aniaml: "));
 
   set_extinction(builder_string(replace, "Esta extinto: "));
 }
@@ -81,15 +82,15 @@ void Animal::all_search() {
   }
 }
 
-void Animal::minimum_search(){
+void Animal::minimum_search() {
   if (get_active()) {
     cout << RESET "\n" BACKGROUND_RED FONT_WHITE
                   " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
                   "\n Nome do Animal: " FONT_BLACK
          << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
-         << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK << get_extinction()
-         << RESET;
-  }        
+         << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK
+         << get_extinction() << RESET;
+  }
 }
 
 bool Animal::specify_search(string name) {
@@ -133,11 +134,11 @@ void Animal::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
-  os << "\n" << animal.name << "\n";
+  os << animal.name << "\n";
   os << animal.binominal_name << "\n";
   os << animal.descriptive_characteristics << "\n";
   os << animal.extinction << "\n";
-  os << animal.is_active;
+  os << animal.is_active << "\n";
 
   os << static_cast<const Species &>(animal);
   os << static_cast<const Genus &>(animal);

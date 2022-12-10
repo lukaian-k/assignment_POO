@@ -1,17 +1,17 @@
 #include "../localization.hpp"
 
-Localization::Localization(string (*replace)(string, char, char)){
+Localization::Localization(string (*replace)(string, char, char)) {
 
   system(CLEAR);
   cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> LOCALIZACAO "
        << RESET "\n\n";
 
-  set_geographical_distribution(builder_string(replace, "Distribuição geografica: "));
+  set_geographical_distribution(
+      builder_string(replace, "Distribuição geografica: "));
 
   set_habitat(builder_string(replace, "Habitat: "));
 
   set_discovery_point(builder_string(replace, "Lugar de descoberta: "));
-
 }
 
 string Localization::get_geographical_distribution() {

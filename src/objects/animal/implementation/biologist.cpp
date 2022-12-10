@@ -1,6 +1,6 @@
 #include "../biologist.hpp"
 
-Biologist::Biologist(string (*replace)(string, char, char)){
+Biologist::Biologist(string (*replace)(string, char, char)) {
 
   system(CLEAR);
   cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> BIOLOGO "
@@ -11,7 +11,6 @@ Biologist::Biologist(string (*replace)(string, char, char)){
   set_nationality(builder_string(replace, "Nacionalidade: "));
 
   set_gender(builder_string(replace, "Gênero: "));
-
 }
 
 string Biologist::get_name() {
@@ -26,9 +25,7 @@ string Biologist::get_gender() {
   return gender == "" ? "Informe esta informação primeiro." : gender;
 }
 
-bool Biologist::set_name(string name) {
-  return set_string(this->name, name);
-}
+bool Biologist::set_name(string name) { return set_string(this->name, name); }
 
 bool Biologist::set_nationality(string nationality) {
   return set_string(this->nationality, nationality);

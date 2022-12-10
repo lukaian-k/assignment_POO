@@ -4,7 +4,7 @@ Classe::Classe(string (*replace)(string, char, char), char before, char after)
     : Phylum(replace, ' ', '-') {
 
   system(CLEAR);
-  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> ANIMAL "
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> CLASSE "
        << RESET "\n\n";
 
   set_name(builder_string(replace, "Insira o nome: "));

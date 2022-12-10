@@ -9,7 +9,7 @@ Family::Family(string (*replace)(string, char, char), char before, char after)
 
   set_name(builder_string(replace, "Insira o nome da familia: "));
 
-  set_description(builder_string(replace, "Insira a descrição da familia"));
+  set_description(builder_string(replace, "Insira a descrição da familia: "));
 }
 
 string Family::get_name() {

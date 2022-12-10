@@ -90,6 +90,8 @@ void Animal::minimum_search() {
          << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
          << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK
          << get_extinction() << RESET;
+
+    cout << endl;
   }
 }
 
@@ -134,11 +136,11 @@ void Animal::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Animal &animal) {
-  os << animal.name << "\n";
-  os << animal.binominal_name << "\n";
-  os << animal.descriptive_characteristics << "\n";
-  os << animal.extinction << "\n";
-  os << animal.is_active << "\n";
+  os << "\n" << animal.is_active << " ";
+  os << animal.name << " ";
+  os << animal.binominal_name << " ";
+  os << animal.descriptive_characteristics << " ";
+  os << animal.extinction << " ";
 
   os << static_cast<const Species &>(animal);
   os << static_cast<const Genus &>(animal);
@@ -151,9 +153,8 @@ ostream &operator<<(ostream &os, const Animal &animal) {
 }
 
 istream &operator>>(istream &is, Animal &animal) {
-  is >> animal.name >> animal.binominal_name >>
-      animal.descriptive_characteristics >> animal.extinction >>
-      animal.is_active;
+  is >> animal.is_active >> animal.name >> animal.binominal_name >>
+      animal.descriptive_characteristics >> animal.extinction;
 
   is >> static_cast<Species &>(animal);
   is >> static_cast<Genus &>(animal);

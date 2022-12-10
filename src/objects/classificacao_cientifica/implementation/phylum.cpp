@@ -46,8 +46,8 @@ void Phylum::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Phylum &phylum) {
-  os << phylum.name << "\n";
-  os << phylum.distinctive_characteristics << "\n";
+  os << phylum.name << " ";
+  os << phylum.distinctive_characteristics << " ";
   return os;
 }
 

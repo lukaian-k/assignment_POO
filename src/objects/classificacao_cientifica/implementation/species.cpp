@@ -57,9 +57,9 @@ void Species::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Species &species) {
-  os << species.name << "\n";
-  os << species.abbreviations << "\n";
-  os << species.species_category << "\n";
+  os << species.name << " ";
+  os << species.abbreviations << " ";
+  os << species.species_category << " ";
   return os;
 }
 

@@ -41,8 +41,8 @@ void Kingdom::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Kingdom &kingdom) {
-  os << kingdom.name << "\n";
-  os << kingdom.description << "\n";
+  os << kingdom.name << " ";
+  os << kingdom.description << " ";
   return os;
 }
 

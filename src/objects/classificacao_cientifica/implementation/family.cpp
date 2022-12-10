@@ -42,8 +42,8 @@ void Family::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Family &family) {
-  os << family.name << "\n";
-  os << family.description << "\n";
+  os << family.name << " ";
+  os << family.description << " ";
   return os;
 }
 

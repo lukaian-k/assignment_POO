@@ -42,8 +42,8 @@ void Genus::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Genus &genus) {
-  os << genus.name << "\n";
-  os << genus.aspects << "\n";
+  os << genus.name << " ";
+  os << genus.aspects << " ";
   return os;
 }
 

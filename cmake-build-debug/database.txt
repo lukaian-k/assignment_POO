@@ -1,5 +1,4 @@
 
-1 x a a a d a a a a a a a a d a a a d a 
-0 s s s s s s s s s s s s s s s s s s s
-0 z s z s s s s s s s s s s s s s s s s
-1 los-jojo the-jojo the-here the-now a-jojo o-jojo la-jojo jojo-jojo jojo jojo-mal jojo-bem jojo-ruim jojo-bom savio jojo sousa lima lucas jose 
+1 a x x x x x x x x x x x x s x d x x x x x x x x x x x
+1 d x x x x x x x x x x f x x x x x x x x x x x x x x x
+1 x x x x x x x x x x x x x x x x x x x x x x x x x x x 

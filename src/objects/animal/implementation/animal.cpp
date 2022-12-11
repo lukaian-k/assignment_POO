@@ -19,6 +19,9 @@ Animal::Animal(string (*replace)(string, char, char))
       builder_string(replace, "Insira a descrição do Animal: "));
 
   set_extinction(builder_string(replace, "Está extinto: "));
+
+  biologist = Biologist(replace);
+  localization = Localization(replace);
 }
 
 string Animal::get_name() {
@@ -78,6 +81,9 @@ void Animal::all_search(int number) {
     Genus::all_search();
     Species::all_search();
 
+    biologist.all_search();
+    localization.all_search();
+
     cout << endl;
   }
 }
@@ -132,6 +138,9 @@ void Animal::conversion_strings(string (*replace)(string, char, char),
     Classe::conversion_strings(replace, before, after);
     Phylum::conversion_strings(replace, before, after);
     Kingdom::conversion_strings(replace, before, after);
+
+    biologist.conversion_strings(replace, before, after);
+    localization.conversion_strings(replace, before, after);
   }
 }
 
@@ -149,6 +158,10 @@ ostream &operator<<(ostream &os, const Animal &animal) {
   os << static_cast<const Classe &>(animal);
   os << static_cast<const Phylum &>(animal);
   os << static_cast<const Kingdom &>(animal);
+
+  os << animal.biologist;
+  os << animal.localization;
+
   return os;
 }
 
@@ -163,5 +176,9 @@ istream &operator>>(istream &is, Animal &animal) {
   is >> static_cast<Classe &>(animal);
   is >> static_cast<Phylum &>(animal);
   is >> static_cast<Kingdom &>(animal);
+
+  is >> animal.biologist;
+  is >> animal.localization;
+
   return is;
 }

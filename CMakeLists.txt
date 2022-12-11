@@ -12,7 +12,7 @@ include_directories(src/system/CRUD)
 include_directories(src/system/GUI)
 
 add_executable(assignment_POO
-        src/exceptions/temp.hpp
+        src/exceptions/blank.hpp
         src/objects/animal/implementation/animal.cpp
         src/objects/animal/implementation/biologist.cpp
         src/objects/animal/implementation/localization.cpp

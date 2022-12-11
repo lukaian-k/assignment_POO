@@ -5,9 +5,6 @@
 
 class General_functions {
 
-private:
-  static bool is_active;
-
 protected:
   bool set_string(string &before, string after);
 

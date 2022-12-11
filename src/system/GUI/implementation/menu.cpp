@@ -2,9 +2,11 @@
 #include "../../CRUD/crud.hpp"
 
 void Menu::text_menu() {
+
   system(CLEAR);
 
   if (is_valid == false) {
+
     cout << BOLD FONT_RED "Selecione uma opção valida! \n" << endl;
     is_valid = true;
   }
@@ -20,46 +22,63 @@ void Menu::text_menu() {
 }
 
 void Menu::menu_select() {
+
   CRUD crud;
 
   cout << "\nDigite a funcionalidade desejada: ";
+
   fflush(stdin);
   cin >> select;
 
   switch (select) {
 
   case REGISTER: {
+
     ofstream fp("database.txt", fstream::app);
+
     crud.add(fp);
     fp.close();
+
     break;
   }
 
   case SEARCH: {
+
     ifstream fp("database.txt");
+
     crud.search(fp);
     fp.close();
+
     break;
   }
 
   case UPDATE: {
+
     fstream fp("database.txt");
+
     crud.update(fp);
     fp.close();
+
     break;
   }
 
   case DELETE: {
+
     fstream fp("database.txt");
+
     crud.remove(fp);
     fp.close();
+
     break;
   }
 
   case EXIT: {
+
     system(CLEAR);
+
     cout << BOLD BACKGROUND_WHITE FONT_GREEN " Programa finalizado! \n" RESET
          << endl;
+
     exit(1);
   }
 

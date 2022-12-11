@@ -7,7 +7,16 @@ int main(int argc, char *argv[]) {
   Menu menu;
 
   while (true) {
-    menu.text_menu();
-    menu.menu_select();
+
+    try {
+
+      menu.text_menu();
+      menu.menu_select();
+
+    } catch (exception &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
+           << e.what() << " " RESET << endl;
+    }
   }
 }

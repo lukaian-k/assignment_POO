@@ -10,6 +10,10 @@ classDiagram
 	Animal *-- Localization
 	Animal *-- Biologist
 	
+	General_functions <|-- Kingdom
+	General_functions <|-- Localization
+	General_functions <|-- Biologist
+	
 	class Kingdom {
 		-String name
 		-String description
@@ -190,9 +194,9 @@ classDiagram
 
 	class CRUD {
 		-int select
-		-enum { ALL = 1, MINIMUM, SPECIFY, BACK = 0 }
+		-ALL = 1, MINIMUM, SPECIFY, BACK = 0 enum
 		-bool is_valid = true
-		-template <typename SEARCH> SEARCH _search
+		-template <typename SEARCH> SEARCH _search()
 		-void _proceed
 
 		+add(ostream &fp) void

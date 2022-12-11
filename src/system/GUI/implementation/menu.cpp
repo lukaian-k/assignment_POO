@@ -70,7 +70,7 @@ void Menu::menu_select() {
       cout << RESET BACKGROUND_RED FONT_WHITE
           "Erro ao abrir o arquivo: database.txt" RESET
            << endl;
-           
+
     } catch (exception &e) {
 
       cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
@@ -82,20 +82,48 @@ void Menu::menu_select() {
 
   case UPDATE: {
 
-    fstream fp("database.txt");
+    try {
 
-    crud.update(fp);
-    fp.close();
+      fstream fp("database.txt");
+
+      crud.update(fp);
+      fp.close();
+
+    } catch (const fstream::failure &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE
+          "Erro ao abrir o arquivo: database.txt" RESET
+           << endl;
+
+    } catch (exception &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
+           << e.what() << " " RESET << endl;
+    }
 
     break;
   }
 
   case DELETE: {
 
-    fstream fp("database.txt");
+    try {
 
-    crud.remove(fp);
-    fp.close();
+      fstream fp("database.txt");
+
+      crud.remove(fp);
+      fp.close();
+
+    } catch (const fstream::failure &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE
+          "Erro ao abrir o arquivo: database.txt" RESET
+           << endl;
+
+    } catch (exception &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
+           << e.what() << " " RESET << endl;
+    }
 
     break;
   }

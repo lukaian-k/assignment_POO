@@ -4,12 +4,12 @@ Family::Family(string (*replace)(string, char, char), char before, char after)
     : Order(replace, ' ', '-') {
 
   system(CLEAR);
-  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FAMILIA "
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FAMÍLIA "
        << RESET "\n\n";
 
-  set_name(builder_string(replace, "Insira o nome da familia: "));
+  set_name(builder_string(replace, "Insira o nome da família: "));
 
-  set_description(builder_string(replace, "Insira a descrição da familia: "));
+  set_description(builder_string(replace, "Insira a descrição da família: "));
 }
 
 string Family::get_name() {

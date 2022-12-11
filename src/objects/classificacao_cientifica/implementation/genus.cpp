@@ -7,7 +7,7 @@ Genus::Genus(string (*replace)(string, char, char), char before, char after)
   cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> GENERO "
        << RESET "\n\n";
 
-  set_name(builder_string(replace, "Insira o genero: "));
+  set_name(builder_string(replace, "Insira o gênero: "));
 
   set_aspects(builder_string(replace, "Aspectos: "));
 }
@@ -28,8 +28,8 @@ bool Genus::set_aspects(string aspects) {
 
 void Genus::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
-      "\n -> Género " BACKGROUND_WHITE FONT_BLUE
-      "\n Nome do Género: " FONT_BLACK
+      "\n -> Gênero " BACKGROUND_WHITE FONT_BLUE
+      "\n Nome do Gênero: " FONT_BLACK
        << get_name() + " " << FONT_BLUE "\n Aspectos: " FONT_BLACK
        << get_aspects() + " " << RESET;
 }

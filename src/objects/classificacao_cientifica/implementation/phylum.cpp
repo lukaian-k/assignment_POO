@@ -10,7 +10,7 @@ Phylum::Phylum(string (*replace)(string, char, char), char before, char after)
   set_name(builder_string(replace, "Insira o nome: "));
 
   set_distinctive_characteristics(
-      builder_string(replace, "Caracteristicas que se distiguem: "));
+      builder_string(replace, "Características que se distinguem: "));
 }
 
 string Phylum::get_name() {

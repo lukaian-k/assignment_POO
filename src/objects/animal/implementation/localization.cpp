@@ -7,7 +7,7 @@ Localization::Localization(string (*replace)(string, char, char)) {
        << RESET "\n\n";
 
   set_geographical_distribution(
-      builder_string(replace, "Distribuição geografica: "));
+      builder_string(replace, "Distribuição geográfica: "));
 
   set_habitat(builder_string(replace, "Habitat: "));
 

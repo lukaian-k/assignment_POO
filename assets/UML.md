@@ -15,10 +15,15 @@ classDiagram
 		-String description
 		
 		+Kingdom()
+		+Kingdom(String (*replace)(String, char, char), char before, char after)
 		+get_name() String
 		+get_description() String
 		+set_name(String name) bool
 		+set_description(String description) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Kingdom &kingdom)
+  		+friend istream &operator>>(istream &is, Kingdom &kingdom)
 		}
 	
 	class Phylum {
@@ -26,10 +31,15 @@ classDiagram
 		-String distinctive_characteristics
 		
 		+Phylum()
+		+Phylum(String (*replace)(String, char, char), char before, char after)
 		+get_name() String
 		+get_distinctive_characteristics() String
 		+set_name(String name) bool
 		+set_distinctive_characteristics(String distinctive_characteristics) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Phylum &phylum)
+  		+friend istream &operator>>(istream &is, Phylum &phylum)
 		}
 		
 	class Classe {
@@ -37,10 +47,15 @@ classDiagram
 		-String description
 
 		+Class()
-		+get_name() : String
-		+get_description() : String
+		+Class(String (*replace)(String, char, char), char before, char after)
+		+get_name() String
+		+get_description() String
 		+set_name(String name) bool
 		+set_description(String description) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Classe &classe)
+  		+friend istream &operator>>(istream &is, Classe &classe)
 		}
 		
 	class Order {
@@ -48,10 +63,15 @@ classDiagram
 		-String description
 
 		+Order()
-		+get_name() : String
-		+get_description() : String
+		+Order(String (*replace)(String, char, char), char before, char after)
+		+get_name() String
+		+get_description() String
 		+set_name(String name) bool
 		+set_description(String description) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Order &order)
+  		+friend istream &operator>>(istream &is, Order &order)
 		}
 	
 	class Family {
@@ -59,10 +79,16 @@ classDiagram
 		-String description
 		
 		+Family()
+		+Family(String (*replace)(String, char, char), char before, char after)
 		+get_name() String
 		+get_description() String
 		+set_name(String name) bool
 		+set_description(String description) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Family &family)
+  		+friend istream &operator>>(istream &is, Family &family)
+
 		}
 	
 	class Genus {
@@ -70,10 +96,15 @@ classDiagram
 		-String aspects
 
 		+Genus()
-		+get_name() : String
-		+get_aspects() : String
-		+set_name(String name) : bool
-		+set_aspects(String aspects) : bool
+		+Genus(String (*replace)(String, char, char), char before, char after)
+		+get_name() String
+		+get_aspects() String
+		+set_name(String name) bool
+		+set_aspects(String aspects) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Genus &genus)
+  		+friend istream &operator>>(istream &is, Genus &genus)
 		}
 		
 	class Species {
@@ -82,20 +113,23 @@ classDiagram
 		-String category
 		
 		+Species()
+		+Species(String (*replace)(String, char, char), char before, char after)
 		+get_name() String
 		+get_abbreviations() String
 		+get_category() String
 		+set_name(String name) bool
 		+set_abbreviations(String abbreviations) bool
 		+set_category(String category) bool
+		+all_search void
+		+conversion_strings(String (*replace)(String, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Species &species)
+  		+friend istream &operator>>(istream &is, Species &species)
 		}
 		
 	class Animal {
 		-String name
 		-String binomial_name
-		-Vector~float~ height_and_weight
 		-String descriptive_characteristics
-		-float life_span
 		-String extinction
 		-Localization localization
 		-Biologist biologist
@@ -104,53 +138,77 @@ classDiagram
 		+Animal(String name)
 		+get_name() String
 		+get_binomial_name() String
-		+get_height_and_weight() Vector
 		+get_descriptive_characteristics() String
-		+get_life_span() float
 		+get_conservation_state() String
 		+get_is_active() bool
 		+set_name(String name) bool
 		+set_binomial_name(String binomial_name) bool
-		+set_height_and_weight(Vector~float~ height_and_weight) bool
 		+set_descriptive_characteristics(String descriptive_characteristics) bool
-		+set_life_span(int life_span) bool
 		+set_conservation_state(String acronym) bool
 		+set_is_active() void
+		+all_search(int number) void
+		+minimum_search(int number) void
+		+specify_search(string name, int number) bool
+		+conversion_strings(string (*replace)(string, char, char), char before, char after) void
+		+friend ostream &operator<<(ostream &os, const Animal &animal)
+  		+friend istream &operator>>(istream &is, Animal &animal)
 		}
 		
 	class Localization {
 		-String geographical_distribution
 		-String habitat
 		-String discovery_point
-		-Vector~int~ discovery_date
+		-String discovery_date
 		
 		+Localization()
 		+get_geographical_distribution() String
 		+get_habitat() String
 		+get_discovery_point() String
-		+get_discovery_date() Vector~int~
+		+get_discovery_date() String
 		+set_geographical_distribution(String geographical_distribution) bool
 		+set_habitat(String habitat) bool
 		+set_discovery_point(String discovery_point) bool
-		+set_discovery_date(Vector~int~ discovery_date) bool
+		+set_discovery_date(String discovery_date) bool
 		}
 
 	class Biologist {
 		-String name
-		-Vector~int~ birth_data
+		-String birth_date
 		-String nationality
 		-String gender
 		
 		+Biologist()
 		+get_name() String
-		+get_birth_data() Vector~int~
+		+get_birth_data() String
 		+get_nationality() String
 		+get_gender() String
 		+set_name(String name) bool
-		+set_birth_data(Vector~int~ birth_data) bool
+		+set_birth_data(String birth_date) bool
 		+set_nationality(String nationality) bool
 		+set_gender(String gender) bool
 		}
+
+	class CRUD {
+		-int select
+		-enum { ALL = 1, MINIMUM, SPECIFY, BACK = 0 }
+		-bool is_valid = true
+		-template <typename SEARCH> SEARCH _search
+		-void _proceed
+
+		+add(ostream &fp) void
+		+search(ostream &fp) void
+		+update(ostream &fp) void
+		+remove(ostream &fp) void
+		+size() int
+		+size(String name) int
+		+replace(String word, char before, char after) String
+	}
+
+	class General_functions{
+		#set_string(String &before, String after) bool
+		#builder_string(String (*replace)(String, char, char), String text) String
+
+	}
 ```
 
 

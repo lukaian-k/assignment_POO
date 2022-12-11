@@ -6,11 +6,11 @@
 #include "./localization.hpp"
 
 class Animal : public Species {
+  
 private:
   string name;
   string binominal_name;
   string descriptive_characteristics;
-  float life_span;
   string extinction;
   bool is_active = true;
 

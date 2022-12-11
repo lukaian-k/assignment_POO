@@ -81,7 +81,7 @@ ostream &operator<<(ostream &os, const Localization &localization) {
   os << localization.geographical_distribution << " ";
   os << localization.habitat << " ";
   os << localization.discovery_point << " ";
-  os << localization.discovery_date << " ";
+  os << localization.discovery_date << "\n";
   return os;
 }
 

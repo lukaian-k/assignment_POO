@@ -11,6 +11,7 @@ void CRUD::add(ostream &fp) {
     Animal animal(&replace);
     cout << endl;
 
-    fp << animal; // by inserting in the file
+    if (animal.get_active())
+      fp << animal; // by inserting in the file
   }
 }

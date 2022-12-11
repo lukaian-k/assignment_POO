@@ -1,3 +1,6 @@
+#ifndef _CRUD
+#define _CRUD
+
 #include "../../../_config.hpp"
 #include "../../objects/animal/animal.hpp"
 
@@ -15,5 +18,10 @@ public:
   void search(istream &fp);
   void update(fstream &fp);
   void remove(fstream &fp);
+
   void size();
 };
+
+string replace(string word, char before, char after);
+
+#endif

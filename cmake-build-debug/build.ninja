@@ -126,8 +126,36 @@ build CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/impleme
   OBJECT_DIR = CMakeFiles/assignment_POO.dir
   OBJECT_FILE_DIR = CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation
 
+build CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/add.cpp.o: CXX_COMPILER__assignment_POO_Debug /home/lukaian/CLionProjects/assignment_POO/src/system/CRUD/implementation/add.cpp || cmake_object_order_depends_target_assignment_POO
+  DEP_FILE = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/add.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/lukaian/CLionProjects/assignment_POO/. -I/home/lukaian/CLionProjects/assignment_POO/src/exceptions -I/home/lukaian/CLionProjects/assignment_POO/src/objects/animal -I/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects -I/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica -I/home/lukaian/CLionProjects/assignment_POO/src/system/CRUD -I/home/lukaian/CLionProjects/assignment_POO/src/system/GUI
+  OBJECT_DIR = CMakeFiles/assignment_POO.dir
+  OBJECT_FILE_DIR = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation
+
 build CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/crud.cpp.o: CXX_COMPILER__assignment_POO_Debug /home/lukaian/CLionProjects/assignment_POO/src/system/CRUD/implementation/crud.cpp || cmake_object_order_depends_target_assignment_POO
   DEP_FILE = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/crud.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/lukaian/CLionProjects/assignment_POO/. -I/home/lukaian/CLionProjects/assignment_POO/src/exceptions -I/home/lukaian/CLionProjects/assignment_POO/src/objects/animal -I/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects -I/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica -I/home/lukaian/CLionProjects/assignment_POO/src/system/CRUD -I/home/lukaian/CLionProjects/assignment_POO/src/system/GUI
+  OBJECT_DIR = CMakeFiles/assignment_POO.dir
+  OBJECT_FILE_DIR = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation
+
+build CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/remove.cpp.o: CXX_COMPILER__assignment_POO_Debug /home/lukaian/CLionProjects/assignment_POO/src/system/CRUD/implementation/remove.cpp || cmake_object_order_depends_target_assignment_POO
+  DEP_FILE = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/remove.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/lukaian/CLionProjects/assignment_POO/. -I/home/lukaian/CLionProjects/assignment_POO/src/exceptions -I/home/lukaian/CLionProjects/assignment_POO/src/objects/animal -I/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects -I/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica -I/home/lukaian/CLionProjects/assignment_POO/src/system/CRUD -I/home/lukaian/CLionProjects/assignment_POO/src/system/GUI
+  OBJECT_DIR = CMakeFiles/assignment_POO.dir
+  OBJECT_FILE_DIR = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation
+
+build CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/search.cpp.o: CXX_COMPILER__assignment_POO_Debug /home/lukaian/CLionProjects/assignment_POO/src/system/CRUD/implementation/search.cpp || cmake_object_order_depends_target_assignment_POO
+  DEP_FILE = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/search.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/lukaian/CLionProjects/assignment_POO/. -I/home/lukaian/CLionProjects/assignment_POO/src/exceptions -I/home/lukaian/CLionProjects/assignment_POO/src/objects/animal -I/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects -I/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica -I/home/lukaian/CLionProjects/assignment_POO/src/system/CRUD -I/home/lukaian/CLionProjects/assignment_POO/src/system/GUI
+  OBJECT_DIR = CMakeFiles/assignment_POO.dir
+  OBJECT_FILE_DIR = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation
+
+build CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/update.cpp.o: CXX_COMPILER__assignment_POO_Debug /home/lukaian/CLionProjects/assignment_POO/src/system/CRUD/implementation/update.cpp || cmake_object_order_depends_target_assignment_POO
+  DEP_FILE = CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/update.cpp.o.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -I/home/lukaian/CLionProjects/assignment_POO/. -I/home/lukaian/CLionProjects/assignment_POO/src/exceptions -I/home/lukaian/CLionProjects/assignment_POO/src/objects/animal -I/home/lukaian/CLionProjects/assignment_POO/src/objects/auxiliary_objects -I/home/lukaian/CLionProjects/assignment_POO/src/objects/classificacao_cientifica -I/home/lukaian/CLionProjects/assignment_POO/src/system/CRUD -I/home/lukaian/CLionProjects/assignment_POO/src/system/GUI
   OBJECT_DIR = CMakeFiles/assignment_POO.dir
@@ -155,7 +183,7 @@ build CMakeFiles/assignment_POO.dir/main.cpp.o: CXX_COMPILER__assignment_POO_Deb
 #############################################
 # Link the executable assignment_POO
 
-build assignment_POO: CXX_EXECUTABLE_LINKER__assignment_POO_Debug CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/animal.cpp.o CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/biologist.cpp.o CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/localization.cpp.o CMakeFiles/assignment_POO.dir/src/objects/auxiliary_objects/implementation/general_functions.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/class.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/family.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/genus.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/kingdom.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/order.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/phylum.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/species.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/crud.cpp.o CMakeFiles/assignment_POO.dir/src/system/GUI/implementation/menu.cpp.o CMakeFiles/assignment_POO.dir/main.cpp.o
+build assignment_POO: CXX_EXECUTABLE_LINKER__assignment_POO_Debug CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/animal.cpp.o CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/biologist.cpp.o CMakeFiles/assignment_POO.dir/src/objects/animal/implementation/localization.cpp.o CMakeFiles/assignment_POO.dir/src/objects/auxiliary_objects/implementation/general_functions.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/class.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/family.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/genus.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/kingdom.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/order.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/phylum.cpp.o CMakeFiles/assignment_POO.dir/src/objects/classificacao_cientifica/implementation/species.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/add.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/crud.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/remove.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/search.cpp.o CMakeFiles/assignment_POO.dir/src/system/CRUD/implementation/update.cpp.o CMakeFiles/assignment_POO.dir/src/system/GUI/implementation/menu.cpp.o CMakeFiles/assignment_POO.dir/main.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/assignment_POO.dir
   POST_BUILD = :

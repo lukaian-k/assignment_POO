@@ -1,5 +1,4 @@
 #include "../menu.hpp"
-#include "../../../objects/animal/animal.hpp"
 #include "../../CRUD/crud.hpp"
 
 void Menu::text_menu() {
@@ -47,7 +46,6 @@ void Menu::menu_select() {
     fstream fp("database.txt");
     crud.update(fp);
     fp.close();
-    break;
     break;
   }
 

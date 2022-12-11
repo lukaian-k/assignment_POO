@@ -30,8 +30,8 @@ void Genus::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Género " BACKGROUND_WHITE FONT_BLUE
       "\n Nome do Género: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Aspectos: " FONT_BLACK << get_aspects()
-       << RESET;
+       << get_name() + " " << FONT_BLUE "\n Aspectos: " FONT_BLACK
+       << get_aspects() + " " << RESET;
 }
 
 void Genus::conversion_strings(string (*replace)(string, char, char),

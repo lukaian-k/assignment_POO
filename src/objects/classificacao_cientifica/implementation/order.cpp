@@ -29,8 +29,8 @@ bool Order::set_description(string description) {
 void Order::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Ordem " BACKGROUND_WHITE FONT_BLUE "\n Nome da Ordem: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Order::conversion_strings(string (*replace)(string, char, char),

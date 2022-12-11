@@ -30,8 +30,8 @@ void Family::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Família " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Família: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Family::conversion_strings(string (*replace)(string, char, char),

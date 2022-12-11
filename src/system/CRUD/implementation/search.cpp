@@ -43,6 +43,10 @@ void CRUD::search(istream &fp) {
           animal.all_search(size(animal.get_name()));
         }
 
+        cout << RESET "\n\n" BOLD BACKGROUND_WHITE FONT_BLUE
+                      " Total de Animais cadastrados: "
+             << size() << " " RESET << endl;
+
         _proceed();
       }
       return;
@@ -64,6 +68,10 @@ void CRUD::search(istream &fp) {
           animal.conversion_strings(&replace, '-', ' ');
           animal.minimum_search(size(animal.get_name()));
         }
+
+        cout << RESET "\n\n" BOLD BACKGROUND_WHITE FONT_BLUE
+                      " Total de Animais cadastrados: "
+             << size() << " " RESET << endl;
 
         _proceed();
       }

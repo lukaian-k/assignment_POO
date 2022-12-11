@@ -29,8 +29,8 @@ bool Kingdom::set_description(string description) {
 void Kingdom::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Reino " BACKGROUND_WHITE FONT_BLUE "\n Nome da Reino: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Kingdom::conversion_strings(string (*replace)(string, char, char),

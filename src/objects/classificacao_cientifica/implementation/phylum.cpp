@@ -33,8 +33,8 @@ bool Phylum::set_distinctive_characteristics(
 void Phylum::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Filo " BACKGROUND_WHITE FONT_BLUE "\n Nome da Filo: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_distinctive_characteristics() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_distinctive_characteristics() + " " << RESET;
 }
 
 void Phylum::conversion_strings(string (*replace)(string, char, char),

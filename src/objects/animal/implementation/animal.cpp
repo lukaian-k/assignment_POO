@@ -63,10 +63,11 @@ void Animal::all_search(int number) {
   if (get_active()) {
     cout << RESET "\n" BACKGROUND_RED FONT_WHITE " ANIMAL - N°" << number
          << " " BACKGROUND_WHITE FONT_BLUE "\n Nome do Animal: " FONT_BLACK
-         << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
-         << get_binominal_name() << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
-         << get_descriptive_characteristics()
-         << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction()
+         << get_name() + " " << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+         << get_binominal_name() + " "
+         << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
+         << get_descriptive_characteristics() + " "
+         << FONT_BLUE "\n Em Extinção? " FONT_BLACK << get_extinction() + " "
          << RESET;
 
     Kingdom::all_search();
@@ -85,9 +86,10 @@ void Animal::minimum_search(int number) {
   if (get_active()) {
     cout << RESET "\n" BACKGROUND_RED FONT_WHITE " ANIMAL - N°" << number
          << " " BACKGROUND_WHITE FONT_BLUE "\n Nome do Animal: " FONT_BLACK
-         << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
-         << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK
-         << get_extinction() << RESET;
+         << get_name() + " " << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+         << get_binominal_name() + " "
+         << FONT_BLUE "\n  Em Extinção? " FONT_BLACK << get_extinction() + " "
+         << RESET;
 
     cout << endl;
   }

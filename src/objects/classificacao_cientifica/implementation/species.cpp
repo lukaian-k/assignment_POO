@@ -42,10 +42,10 @@ void Species::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Espécie " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Espécie: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
-       << get_abbreviations()
-       << FONT_BLUE "\n Categoria da Espécie: " FONT_BLACK << get_category()
-       << RESET;
+       << get_name() + " " << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
+       << get_abbreviations() + " "
+       << FONT_BLUE "\n Categoria da Espécie: " FONT_BLACK
+       << get_category() + " " << RESET;
 }
 
 void Species::conversion_strings(string (*replace)(string, char, char),

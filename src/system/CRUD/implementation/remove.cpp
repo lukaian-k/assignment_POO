@@ -19,7 +19,7 @@ void CRUD::remove(fstream &fp) {
       auto pos = fp.tellg();
       fp >> animal; // extracts from the file
 
-      if (animal.specify_search(name)) {
+      if (animal.specify_search(name, size(animal.get_name()))) {
 
         cout << RESET BOLD FONT_RED "\nDeseja deletar? " FONT_GREEN
                                     "(1: SIM | 0: NÃO) " RESET;

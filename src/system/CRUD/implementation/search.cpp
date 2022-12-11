@@ -40,7 +40,7 @@ void CRUD::search(istream &fp) {
 
           fp >> animal; // extracts from the file
           animal.conversion_strings(&replace, '-', ' ');
-          animal.all_search();
+          animal.all_search(size(animal.get_name()));
         }
 
         _proceed();
@@ -62,7 +62,7 @@ void CRUD::search(istream &fp) {
 
           fp >> animal; // extracts from the file
           animal.conversion_strings(&replace, '-', ' ');
-          animal.minimum_search();
+          animal.minimum_search(size(animal.get_name()));
         }
 
         _proceed();
@@ -90,7 +90,7 @@ void CRUD::search(istream &fp) {
           fp >> animal; // extracts from the file
           animal.conversion_strings(&replace, '-', ' ');
 
-          if (animal.specify_search(name))
+          if (animal.specify_search(name, size(animal.get_name())))
             break;
 
           if (fp.eof()) {

@@ -38,7 +38,7 @@ void CRUD::update(fstream &fp) {
       auto pos = fp.tellg();
       fp >> animal; // extracts from the file
 
-      if (animal.specify_search(name)) {
+      if (animal.specify_search(name, size(animal.get_name()))) {
 
         enum { FULL = 1, SPECIFY, DONE = 0 };
         bool repeat = true;
@@ -224,6 +224,3 @@ void CRUD::update(fstream &fp) {
     _proceed();
   }
 }
-
-void CRUD::size() {
-} // tentar usar a var global da class para cirar o contador de animal

@@ -19,3 +19,60 @@ void CRUD::_proceed() {
   cin.ignore();
   cin.get();
 }
+
+int CRUD::size() {
+
+  ifstream fp("database.txt");
+
+  if (!fp.good()) {
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt" RESET
+         << endl;
+
+    return 417;
+  }
+
+  Animal animal;
+  int i = 0;
+
+  while (!fp.eof()) {
+
+    fp >> animal;
+
+    if (animal.get_active())
+      i++;
+  }
+
+  return i;
+}
+
+int CRUD::size(string name) {
+
+  ifstream fp("database.txt");
+
+  if (!fp.good()) {
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt" RESET
+         << endl;
+
+    return 417;
+  }
+
+  Animal animal;
+  int i = 0;
+
+  while (!fp.eof()) {
+
+    fp >> animal;
+
+    if (!animal.get_active())
+      continue;
+
+    i++;
+
+    if (name == animal.get_name())
+      return i;
+  }
+
+  return 404;
+}

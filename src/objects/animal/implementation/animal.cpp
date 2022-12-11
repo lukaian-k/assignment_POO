@@ -59,11 +59,10 @@ bool Animal::set_extinction(string extinction) {
 
 void Animal::set_active() { is_active ? is_active = false : is_active = true; }
 
-void Animal::all_search() {
+void Animal::all_search(int number) {
   if (get_active()) {
-    cout << RESET "\n" BACKGROUND_RED FONT_WHITE
-                  " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
-                  "\n Nome do Animal: " FONT_BLACK
+    cout << RESET "\n" BACKGROUND_RED FONT_WHITE " ANIMAL - N°" << number
+         << " " BACKGROUND_WHITE FONT_BLUE "\n Nome do Animal: " FONT_BLACK
          << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
          << get_binominal_name() << FONT_BLUE "\n Caracteristicas: " FONT_BLACK
          << get_descriptive_characteristics()
@@ -82,11 +81,10 @@ void Animal::all_search() {
   }
 }
 
-void Animal::minimum_search() {
+void Animal::minimum_search(int number) {
   if (get_active()) {
-    cout << RESET "\n" BACKGROUND_RED FONT_WHITE
-                  " ANIMAL - N°x " BACKGROUND_WHITE FONT_BLUE
-                  "\n Nome do Animal: " FONT_BLACK
+    cout << RESET "\n" BACKGROUND_RED FONT_WHITE " ANIMAL - N°" << number
+         << " " BACKGROUND_WHITE FONT_BLUE "\n Nome do Animal: " FONT_BLACK
          << get_name() << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
          << get_binominal_name() << FONT_BLUE "\n  Em Extinção? " FONT_BLACK
          << get_extinction() << RESET;
@@ -95,7 +93,7 @@ void Animal::minimum_search() {
   }
 }
 
-bool Animal::specify_search(string name) {
+bool Animal::specify_search(string name, int number) {
   if (!get_active())
     return false;
 
@@ -105,7 +103,7 @@ bool Animal::specify_search(string name) {
   transform(get.begin(), get.end(), get.begin(), ::tolower);
 
   if (name == get) {
-    all_search();
+    all_search(number);
     return true;
   }
 

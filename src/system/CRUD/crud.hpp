@@ -19,7 +19,8 @@ public:
   void update(fstream &fp);
   void remove(fstream &fp);
 
-  void size();
+  int size();
+  int size(string name);
 };
 
 string replace(string word, char before, char after);

@@ -30,9 +30,9 @@ public:
   bool set_extinction(string extinction);
   void set_active();
 
-  void all_search();
-  void minimum_search();
-  bool specify_search(string name);
+  void all_search(int number);
+  void minimum_search(int number);
+  bool specify_search(string name, int number);
 
   void conversion_strings(string (*replace)(string, char, char), char before,
                           char after);

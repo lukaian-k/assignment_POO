@@ -13,12 +13,12 @@ Animal::Animal(string (*replace)(string, char, char))
 
   set_name(builder_string(replace, "Insira o nome: "));
 
-  set_binominal_name(builder_string(replace, "Insira o nome cientifico: "));
+  set_binominal_name(builder_string(replace, "Insira o nome científico: "));
 
   set_descriptive_characteristics(
-      builder_string(replace, "Insira a descrição do Aniaml: "));
+      builder_string(replace, "Insira a descrição do Animal: "));
 
-  set_extinction(builder_string(replace, "Esta extinto: "));
+  set_extinction(builder_string(replace, "Está extinto: "));
 }
 
 string Animal::get_name() {
@@ -86,7 +86,7 @@ void Animal::minimum_search(int number) {
   if (get_active()) {
     cout << RESET "\n" BACKGROUND_RED FONT_WHITE " ANIMAL - N°" << number
          << " " BACKGROUND_WHITE FONT_BLUE "\n Nome do Animal: " FONT_BLACK
-         << get_name() + " " << FONT_BLUE "\n Nome Cientifico: " FONT_BLACK
+         << get_name() + " " << FONT_BLUE "\n Nome Científico: " FONT_BLACK
          << get_binominal_name() + " "
          << FONT_BLUE "\n  Em Extinção? " FONT_BLACK << get_extinction() + " "
          << RESET;

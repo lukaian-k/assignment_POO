@@ -43,7 +43,7 @@ int CRUD::size() {
       i++;
   }
 
-  return i;
+  return i - 1;
 }
 
 int CRUD::size(string name) {
@@ -69,6 +69,8 @@ int CRUD::size(string name) {
       continue;
 
     i++;
+
+    name = replace(name, ' ', '-');
 
     if (name == animal.get_name())
       return i;

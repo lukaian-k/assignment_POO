@@ -1,8 +1,17 @@
 #include "./src/system/GUI/menu.hpp"
 
 int main(int argc, char *argv[]) {
-  ofstream fp("database.txt", ios::app);
-  fp.close();
+  try {
+
+    ofstream fp("database.txt", ios::app);
+    fp.close();
+
+  } catch (const ifstream::failure &e) {
+
+    cout << RESET BACKGROUND_RED FONT_WHITE
+        "Erro ao abrir o arquivo: database.txt" RESET
+         << endl;
+  }
 
   Menu menu;
 

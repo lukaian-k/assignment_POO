@@ -34,20 +34,48 @@ void Menu::menu_select() {
 
   case REGISTER: {
 
-    ofstream fp("database.txt", fstream::app);
+    try {
 
-    crud.add(fp);
-    fp.close();
+      ofstream fp("database.txt", fstream::app);
+
+      crud.add(fp);
+      fp.close();
+
+    } catch (const ofstream::failure &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE
+          "Erro ao abrir o arquivo: database.txt" RESET
+           << endl;
+
+    } catch (exception &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
+           << e.what() << " " RESET << endl;
+    }
 
     break;
   }
 
   case SEARCH: {
 
-    ifstream fp("database.txt");
+    try {
 
-    crud.search(fp);
-    fp.close();
+      ifstream fp("database.txt");
+
+      crud.search(fp);
+      fp.close();
+
+    } catch (const ifstream::failure &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE
+          "Erro ao abrir o arquivo: database.txt" RESET
+           << endl;
+           
+    } catch (exception &e) {
+
+      cout << RESET BACKGROUND_RED FONT_WHITE "\nAlgo ocorreu! Error: "
+           << e.what() << " " RESET << endl;
+    }
 
     break;
   }

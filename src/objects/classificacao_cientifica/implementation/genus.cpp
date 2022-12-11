@@ -3,9 +3,13 @@
 Genus::Genus(string (*replace)(string, char, char), char before, char after)
     : Family(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> GENERO "
+       << RESET "\n\n";
 
-  set_aspects(replace(get_aspects(), before, after));
+  set_name(builder_string(replace, "Insira o genero: "));
+
+  set_aspects(builder_string(replace, "Aspectos: "));
 }
 
 string Genus::get_name() {
@@ -26,8 +30,8 @@ void Genus::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Género " BACKGROUND_WHITE FONT_BLUE
       "\n Nome do Género: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Aspectos: " FONT_BLACK << get_aspects()
-       << RESET;
+       << get_name() + " " << FONT_BLUE "\n Aspectos: " FONT_BLACK
+       << get_aspects() + " " << RESET;
 }
 
 void Genus::conversion_strings(string (*replace)(string, char, char),
@@ -38,8 +42,8 @@ void Genus::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Genus &genus) {
-  os << "\n" << genus.name << "\n";
-  os << genus.aspects;
+  os << genus.name << " ";
+  os << genus.aspects << " ";
   return os;
 }
 

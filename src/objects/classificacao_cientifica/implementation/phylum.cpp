@@ -3,10 +3,14 @@
 Phylum::Phylum(string (*replace)(string, char, char), char before, char after)
     : Kingdom(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FILO "
+       << RESET "\n\n";
+
+  set_name(builder_string(replace, "Insira o nome: "));
 
   set_distinctive_characteristics(
-      replace(get_distinctive_characteristics(), before, after));
+      builder_string(replace, "Caracteristicas que se distiguem: "));
 }
 
 string Phylum::get_name() {
@@ -28,10 +32,9 @@ bool Phylum::set_distinctive_characteristics(
 
 void Phylum::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
-      "\n -> Filo " BACKGROUND_WHITE FONT_BLUE
-      "\n Nome da Filo: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_distinctive_characteristics() << RESET;
+      "\n -> Filo " BACKGROUND_WHITE FONT_BLUE "\n Nome da Filo: " FONT_BLACK
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_distinctive_characteristics() + " " << RESET;
 }
 
 void Phylum::conversion_strings(string (*replace)(string, char, char),
@@ -43,8 +46,8 @@ void Phylum::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Phylum &phylum) {
-  os << "\n" << phylum.name << "\n";
-  os << phylum.distinctive_characteristics;
+  os << phylum.name << " ";
+  os << phylum.distinctive_characteristics << " ";
   return os;
 }
 

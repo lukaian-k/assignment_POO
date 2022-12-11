@@ -3,9 +3,13 @@
 Order::Order(string (*replace)(string, char, char), char before, char after)
     : Classe(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> ORDEM "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
+
+  set_description(builder_string(replace, "Insira a descrição: "));
 }
 
 string Order::get_name() {
@@ -25,8 +29,8 @@ bool Order::set_description(string description) {
 void Order::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Ordem " BACKGROUND_WHITE FONT_BLUE "\n Nome da Ordem: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Order::conversion_strings(string (*replace)(string, char, char),
@@ -37,8 +41,8 @@ void Order::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Order &order) {
-  os << "\n" << order.name << "\n";
-  os << order.description;
+  os << order.name << " ";
+  os << order.description << " ";
   return os;
 }
 

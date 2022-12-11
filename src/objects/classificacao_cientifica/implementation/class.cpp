@@ -3,9 +3,13 @@
 Classe::Classe(string (*replace)(string, char, char), char before, char after)
     : Phylum(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> CLASSE "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
+
+  set_description(builder_string(replace, "Insira a descrição: "));
 }
 
 string Classe::get_name() {
@@ -26,8 +30,8 @@ void Classe::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Classe " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Classe: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Classe::conversion_strings(string (*replace)(string, char, char),
@@ -38,8 +42,8 @@ void Classe::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Classe &classe) {
-  os << "\n" << classe.name << "\n";
-  os << classe.description;
+  os << classe.name << " ";
+  os << classe.description << " ";
   return os;
 }
 

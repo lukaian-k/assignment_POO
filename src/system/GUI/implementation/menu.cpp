@@ -1,5 +1,4 @@
 #include "../menu.hpp"
-#include "../../../objects/animal/animal.hpp"
 #include "../../CRUD/crud.hpp"
 
 void Menu::text_menu() {
@@ -44,12 +43,16 @@ void Menu::menu_select() {
   }
 
   case UPDATE: {
-    // crud.update();
+    fstream fp("database.txt");
+    crud.update(fp);
+    fp.close();
     break;
   }
 
   case DELETE: {
-    // crud.remove();
+    fstream fp("database.txt");
+    crud.remove(fp);
+    fp.close();
     break;
   }
 

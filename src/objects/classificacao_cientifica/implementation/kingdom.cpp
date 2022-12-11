@@ -3,9 +3,13 @@
 Kingdom::Kingdom(string (*replace)(string, char, char), char before,
                  char after) {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> REINO "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
+
+  set_description(builder_string(replace, "Descrição do reino: "));
 }
 
 string Kingdom::get_name() {
@@ -25,8 +29,8 @@ bool Kingdom::set_description(string description) {
 void Kingdom::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Reino " BACKGROUND_WHITE FONT_BLUE "\n Nome da Reino: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Kingdom::conversion_strings(string (*replace)(string, char, char),
@@ -37,8 +41,8 @@ void Kingdom::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Kingdom &kingdom) {
-  os << "\n" << kingdom.name << "\n";
-  os << kingdom.description << "\n";
+  os << kingdom.name << " ";
+  os << kingdom.description << " ";
   return os;
 }
 

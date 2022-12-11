@@ -3,6 +3,7 @@
 int main(int argc, char *argv[]) {
   ofstream fp("database.txt", ios::app);
   fp.close();
+
   Menu menu;
 
   while (true) {

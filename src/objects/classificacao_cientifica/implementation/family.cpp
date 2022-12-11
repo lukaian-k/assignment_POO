@@ -3,9 +3,13 @@
 Family::Family(string (*replace)(string, char, char), char before, char after)
     : Order(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> FAMILIA "
+       << RESET "\n\n";
 
-  set_description(replace(get_description(), before, after));
+  set_name(builder_string(replace, "Insira o nome da familia: "));
+
+  set_description(builder_string(replace, "Insira a descrição da familia: "));
 }
 
 string Family::get_name() {
@@ -26,8 +30,8 @@ void Family::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Família " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Família: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Descrição: " FONT_BLACK
-       << get_description() << RESET;
+       << get_name() + " " << FONT_BLUE "\n Descrição: " FONT_BLACK
+       << get_description() + " " << RESET;
 }
 
 void Family::conversion_strings(string (*replace)(string, char, char),
@@ -38,8 +42,8 @@ void Family::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Family &family) {
-  os << "\n" << family.name << "\n";
-  os << family.description;
+  os << family.name << " ";
+  os << family.description << " ";
   return os;
 }
 

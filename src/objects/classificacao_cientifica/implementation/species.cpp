@@ -3,11 +3,15 @@
 Species::Species(string (*replace)(string, char, char), char before, char after)
     : Genus(replace, ' ', '-') {
 
-  set_name(replace(get_name(), before, after));
+  system(CLEAR);
+  cout << RESET BOLD BACKGROUND_BLUE FONT_WHITE " INFO >> ESPÉCIES "
+       << RESET "\n\n";
 
-  set_abbreviations(replace(get_abbreviations(), before, after));
+  set_name(builder_string(replace, "Insira o nome: "));
 
-  set_category(replace(get_category(), before, after));
+  set_abbreviations(builder_string(replace, "Abreviação: "));
+
+  set_category(builder_string(replace, "Categoria: "));
 }
 
 string Species::get_name() {
@@ -38,10 +42,10 @@ void Species::all_search() {
   cout << RESET BACKGROUND_BLUE FONT_WHITE
       "\n -> Espécie " BACKGROUND_WHITE FONT_BLUE
       "\n Nome da Espécie: " FONT_BLACK
-       << get_name() << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
-       << get_abbreviations()
-       << FONT_BLUE "\n Categoria da Espécie: " FONT_BLACK << get_category()
-       << RESET;
+       << get_name() + " " << FONT_BLUE "\n Abreviaturas: " FONT_BLACK
+       << get_abbreviations() + " "
+       << FONT_BLUE "\n Categoria da Espécie: " FONT_BLACK
+       << get_category() + " " << RESET;
 }
 
 void Species::conversion_strings(string (*replace)(string, char, char),
@@ -53,9 +57,9 @@ void Species::conversion_strings(string (*replace)(string, char, char),
 }
 
 ostream &operator<<(ostream &os, const Species &species) {
-  os << "\n" << species.name << "\n";
-  os << species.abbreviations << "\n";
-  os << species.species_category;
+  os << species.name << " ";
+  os << species.abbreviations << " ";
+  os << species.species_category << " ";
   return os;
 }
 

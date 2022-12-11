@@ -35,7 +35,11 @@ add_executable(assignment_POO
         src/objects/classificacao_cientifica/order.hpp
         src/objects/classificacao_cientifica/phylum.hpp
         src/objects/classificacao_cientifica/species.hpp
+        src/system/CRUD/implementation/add.cpp
         src/system/CRUD/implementation/crud.cpp
+        src/system/CRUD/implementation/remove.cpp
+        src/system/CRUD/implementation/search.cpp
+        src/system/CRUD/implementation/update.cpp
         src/system/CRUD/crud.hpp
         src/system/GUI/implementation/menu.cpp
         src/system/GUI/colors.hpp

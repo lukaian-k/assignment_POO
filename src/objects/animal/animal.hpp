@@ -14,6 +14,9 @@ private:
   string extinction;
   bool is_active = true;
 
+  Biologist biologist;
+  Localization localization;
+
 public:
   Animal() {}
   Animal(string (*replace)(string, char, char));

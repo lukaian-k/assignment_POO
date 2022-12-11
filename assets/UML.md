@@ -15,10 +15,10 @@ classDiagram
 		-String description
 		
 		+Kingdom()
-		+get_kingdom_name() String
-		+get_kingdom_description() String
-		+set_kingdom_name(String name) bool
-		+set_kingdom_description(String description) bool
+		+get_name() String
+		+get_description() String
+		+set_name(String name) bool
+		+set_description(String description) bool
 		}
 	
 	class Phylum {
@@ -26,10 +26,10 @@ classDiagram
 		-String distinctive_characteristics
 		
 		+Phylum()
-		+get_phylum_name() String
-		+get_phylum_distinctive_characteristics() String
-		+set_phylum_name(String name) bool
-		+set_phylum_distinctive_characteristics(String distinctive_characteristics) bool
+		+get_name() String
+		+get_distinctive_characteristics() String
+		+set_name(String name) bool
+		+set_distinctive_characteristics(String distinctive_characteristics) bool
 		}
 		
 	class Classe {
@@ -37,10 +37,10 @@ classDiagram
 		-String description
 
 		+Class()
-		+get_class_name() : String
-		+get_class_description() : String
-		+set_class_name(String name) bool
-		+set_class_description(String description) bool
+		+get_name() : String
+		+get_description() : String
+		+set_name(String name) bool
+		+set_description(String description) bool
 		}
 		
 	class Order {
@@ -48,10 +48,10 @@ classDiagram
 		-String description
 
 		+Order()
-		+get_order_name() : String
-		+get_order_description() : String
-		+set_order_name(String name) bool
-		+set_order_description(String description) bool
+		+get_name() : String
+		+get_description() : String
+		+set_name(String name) bool
+		+set_description(String description) bool
 		}
 	
 	class Family {
@@ -59,21 +59,21 @@ classDiagram
 		-String description
 		
 		+Family()
-		+get_family_name() String
-		+get_family_description() String
-		+set_family_name(String name) bool
-		+set_family_description(String description) bool
+		+get_name() String
+		+get_description() String
+		+set_name(String name) bool
+		+set_description(String description) bool
 		}
 	
 	class Genus {
 		-String name
-		-String description
+		-String aspects
 
 		+Genus()
-		+get_genus_name() : String
-		+get_genus_description() : String
-		+set_genus_name(String name) : bool
-		+set_genus_description(String aspects) : bool
+		+get_name() : String
+		+get_aspects() : String
+		+set_name(String name) : bool
+		+set_aspects(String aspects) : bool
 		}
 		
 	class Species {
@@ -82,12 +82,12 @@ classDiagram
 		-String category
 		
 		+Species()
-		+get_species_name() String
-		+get_species_abbreviations() String
-		+get_species_category() String
-		+set_species_name(String name) bool
-		+set_species_abbreviations(String abbreviations) bool
-		+set_species_category(String category) bool
+		+get_name() String
+		+get_abbreviations() String
+		+get_category() String
+		+set_name(String name) bool
+		+set_abbreviations(String abbreviations) bool
+		+set_category(String category) bool
 		}
 		
 	class Animal {

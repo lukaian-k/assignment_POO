@@ -27,8 +27,21 @@ void CRUD::remove(fstream &fp) {
         animal.set_active();
         fflush(stdin);
 
+        string str;
+        cin >> str;
+
         int answer;
-        cin >> answer;
+
+        try {
+
+          answer = stoi(str);
+
+          if (answer < 0 && answer > 1) {
+            throw false;
+          }
+
+        } catch (...) {
+        }
 
         if (answer != 1) {
           cout << RESET BACKGROUND_RED FONT_WHITE

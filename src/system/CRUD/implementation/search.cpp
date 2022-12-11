@@ -22,7 +22,20 @@ void CRUD::search(istream &fp) {
 
     cout << "\nDigite a funcionalidade desejada: ";
     fflush(stdin);
-    cin >> select;
+
+    string str;
+    cin >> str;
+
+    try {
+
+      select = stoi(str);
+
+      if (select < 0 && select > 3) {
+        throw false;
+      }
+
+    } catch (...) {
+    }
 
     switch (select) {
 

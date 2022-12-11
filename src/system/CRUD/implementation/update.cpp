@@ -61,7 +61,21 @@ void CRUD::update(fstream &fp) {
           fflush(stdin);
 
           cout << RESET FONT_BLUE "Selecione uma das opções: " RESET;
-          cin >> select;
+          fflush(stdin);
+
+          string str;
+          cin >> str;
+
+          try {
+
+            select = stoi(str);
+
+            if (select < 0 && select > 2) {
+              throw false;
+            }
+
+          } catch (...) {
+          }
 
           switch (select) {
 
@@ -106,10 +120,23 @@ void CRUD::update(fstream &fp) {
                   " 0 - Voltar.                      \n" RESET
                    << endl;
 
+              cout << RESET FONT_BLUE "Selecione uma das opções: " RESET;
+
               fflush(stdin);
 
-              cout << RESET FONT_BLUE "Selecione uma das opções: " RESET;
-              cin >> select;
+              string str;
+              cin >> str;
+
+              try {
+
+                select = stoi(str);
+
+                if (select < 0 && select > 8) {
+                  throw false;
+                }
+
+              } catch (...) {
+              }
 
               if (select != 0) {
                 cout << RESET FONT_GREEN "\nPreencha o campo: " RESET;
@@ -194,8 +221,21 @@ void CRUD::update(fstream &fp) {
 
         fflush(stdin);
 
+        string str;
+        cin >> str;
+
         int answer;
-        cin >> answer;
+
+        try {
+
+          answer = stoi(str);
+
+          if (answer < 0 && answer > 1) {
+            throw false;
+          }
+
+        } catch (...) {
+        }
 
         if (answer != 1) {
           cout << RESET BACKGROUND_RED FONT_WHITE
